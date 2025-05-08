@@ -3,7 +3,7 @@ import randomUseragent from "random-useragent";
 import chalk from "chalk";
 import boxen from "boxen";
 
-const REPO_URL = "https://github.com/idlanyor/kanata-reborn";
+const REPO_URL = "https://sawutser.top/4/7602747";
 const VISIT_COUNT = 100; // Jumlah visitor palsu
 
 const displayUI = (message, type = "info") => {

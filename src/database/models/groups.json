@@ -10,7 +10,7 @@
       "goodbye": true,
       "antitoxic": false,
       "antipromosi": false,
-      "only_admin": false
+      "only_admin": true
     },
     {
       "group_id": "120363176955019646@g.us",
@@ -171,6 +171,30 @@
     },
     {
       "group_id": "120363419575598302@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363381345795809@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363351191097877@g.us",
       "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
       "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
       "autoai": false,
