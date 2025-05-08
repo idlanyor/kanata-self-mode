@@ -1,0 +1,194 @@
+{
+  "group_settings": [
+    {
+      "group_id": "120363025048735374@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": true,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": true,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363176955019646@g.us",
+      "welcome_message": "welkam @user",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363320183359410@g.us",
+      "welcome_message": "Hai tod",
+      "goodbye_message": "bye tod",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363420976976851@g.us",
+      "welcome_message": "Hai @user silahkan diisi ya 📝📌 *KARTU INTRO*\n\n📍*Nama:* \n📍*Umur:* \n📍*Kelas:* \n📍*Askot:* \n📍*Agama:* \n\n👨‍💻 @group",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": true,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": true,
+      "antipromosi": true,
+      "only_admin": false,
+      "antispam": true
+    },
+    {
+      "group_id": "120363393072539921@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363322355235306@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363416900581160@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363178856068106@g.us",
+      "welcome_message": "♥︎𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑡𝑜 𝑜𝑛𝑙𝑖𝑛𝑒 𝑓𝑟𝑖𝑒𝑛𝑑 𝑔𝑐\n          ✿︎ 𝐼𝑛𝑡𝑟𝑜 𝑐𝑎𝑟𝑑 ✿︎\n𝑁𝑎𝑚𝑒 -\n𝐴𝑔𝑒 -\n𝑆𝑡𝑎𝑦 -\n｡｡｡｡｡｡｡｡｡｡｡｡｡｡｡｡｡｡｡｡\n𝑆𝑒𝑛𝑑 𝑝𝑖𝑐 𝑜𝑛𝑒𝑣𝑖𝑒𝑤!!",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363378930842508@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363398687404368@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363412052094677@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363394685221357@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363310510775659@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363347021473313@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    },
+    {
+      "group_id": "120363419575598302@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
+    }
+  ],
+  "spam_detection": [
+    {
+      "user_id": "6285867760406",
+      "group_id": "120363420976976851@g.us",
+      "message_count": 1,
+      "last_message": "2025-04-09T15:02:19+07:00",
+      "warning_count": 0
+    }
+  ]
+}

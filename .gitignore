@@ -1,0 +1,16 @@
+*-bot
+*-bot.js
+*-session
+node_modules
+package-lock.json
+store-*.json
+*.mp4
+db.*
+*.zip
+*.tar.gz
+*.rar
+/global.js
+*.db
+temp/*
+LatestX-green
+jadibots
