@@ -3,9 +3,9 @@
 # 🌟 Kanata V3 - WhatsApp Bot
 ### _Powerful, Modular, Intelligent_
 
-[![GitHub repo size](https://img.shields.io/github/repo-size/idlanyor/kanata-reborn?style=for-the-badge)](https://github.com/idlanyor/kanata-reborn)
-[![GitHub stars](https://img.shields.io/github/stars/idlanyor/kanata-reborn?style=for-the-badge)](https://github.com/idlanyor/kanata-reborn)
-[![GitHub license](https://img.shields.io/github/license/idlanyor/kanata-reborn?style=for-the-badge)](https://github.com/idlanyor/kanata-reborn)
+[![GitHub repo size](https://img.shields.io/github/repo-size/idlanyor/kanata-self-mode?style=for-the-badge)](https://github.com/idlanyor/kanata-self-mode)
+[![GitHub stars](https://img.shields.io/github/stars/idlanyor/kanata-self-mode?style=for-the-badge)](https://github.com/idlanyor/kanata-self-mode)
+[![GitHub license](https://img.shields.io/github/license/idlanyor/kanata-self-mode?style=for-the-badge)](https://github.com/idlanyor/kanata-self-mode)
 [![Node.js Version](https://img.shields.io/badge/Node.js-14+-43853D?style=for-the-badge&logo=node.js)](https://nodejs.org/)
 [![Baileys](https://img.shields.io/badge/Baileys-Latest-blue?style=for-the-badge)](https://github.com/whiskeysockets/baileys)
 
