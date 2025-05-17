@@ -31,7 +31,7 @@
 
 | Kebutuhan | Versi |
 |-----------|-------|
-| Node.js | v14 atau lebih tinggi |
+| Node.js | v18 atau lebih tinggi |
 | NPM/Yarn | Versi terbaru |
 | WhatsApp | Akun aktif |
 | API Keys | Lihat konfigurasi |
@@ -39,8 +39,8 @@
 ## 👌 How to install
 1. **Clone the repository**
 ```bash
-git clone https://github.com/idlanyor/kanata-v2.git
-cd kanata-v2
+git clone https://github.com/idlanyor/kanata-self-mode.git
+cd kanata-self-mode
 ```
 
 2. **Install dependencies**
