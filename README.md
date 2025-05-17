@@ -6,7 +6,7 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/idlanyor/kanata-self-mode?style=for-the-badge)](https://github.com/idlanyor/kanata-self-mode)
 [![GitHub stars](https://img.shields.io/github/stars/idlanyor/kanata-self-mode?style=for-the-badge)](https://github.com/idlanyor/kanata-self-mode)
 [![GitHub license](https://img.shields.io/github/license/idlanyor/kanata-self-mode?style=for-the-badge)](https://github.com/idlanyor/kanata-self-mode)
-[![Node.js Version](https://img.shields.io/badge/Node.js-14+-43853D?style=for-the-badge&logo=node.js)](https://nodejs.org/)
+[![Node.js Version](https://img.shields.io/badge/Node.js-18+-43853D?style=for-the-badge&logo=node.js)](https://nodejs.org/)
 [![Baileys](https://img.shields.io/badge/Baileys-Latest-blue?style=for-the-badge)](https://github.com/whiskeysockets/baileys)
 
 <img src="https://files.catbox.moe/2wynab.jpg" width="400px" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
