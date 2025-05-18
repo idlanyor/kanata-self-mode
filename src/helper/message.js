@@ -101,8 +101,8 @@ export function addMessageHandler(m, sock) {
                 participant: m.message.extendedTextMessage.contextInfo.participant
             },
             type: getMessageType(actualMsg),
-            sender: m.message.extendedTextMessage.contextInfo.participant,
-            senderNumber: m.message.extendedTextMessage.contextInfo.participant.split('@')[0],
+            sender: m.message?.extendedTextMessage?.contextInfo?.participant,
+            senderNumber: m.message?.extendedTextMessage?.contextInfo?.participant?.split('@')[0],
             caption: getQuotedText(actualMsg),
             text: m.message?.extendedTextMessage?.text,
             download: async () => {

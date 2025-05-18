@@ -57,7 +57,7 @@ export default async ({ sock, m, id, psn, sender }) => {
             params: {
                 url: videoUrl,
                 quality: quality,
-                server: 'server2'
+                // server: 'server2'
             },
             headers: {
                 'accept': 'application/json'
@@ -80,7 +80,7 @@ export default async ({ sock, m, id, psn, sender }) => {
         // Kirim video
         await sock.sendMessage(id, { 
             video: { url: result.media },
-            mimetype: 'video/mp4',
+            // mimetype: 'video/mp4',
             fileName: `${result.title}-${result.quality}.mp4`,
             caption: `${result.title} - ${result.quality}`
         }, { quoted: m });
