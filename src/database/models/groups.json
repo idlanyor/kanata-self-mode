@@ -2,7 +2,7 @@
   "group_settings": [
     {
       "group_id": "120363025048735374@g.us",
-      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "welcome_message": "welkam @user in @group",
       "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
       "autoai": true,
       "antilink": false,

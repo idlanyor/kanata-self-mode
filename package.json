@@ -6,7 +6,7 @@
   "type": "module",
   "private": "true",
   "scripts": {
-    "start": "node ."
+    "start": "npx pm2 start app.js --name kanata-self-mode"
   },
   "keywords": [
     "bot",
@@ -72,6 +72,7 @@
     "zip-a-folder": "latest"
   },
   "devDependencies": {
-    "nodemon": "latest"
+    "nodemon": "latest",
+    "pm2": "^6.0.6"
   }
 }
