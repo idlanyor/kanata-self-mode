@@ -3,7 +3,7 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 import fs from 'fs/promises';
 import path from 'path';
-import { capcutDl, fbdl, igDl, mediafire, rednote, threads, tiktokDl } from './scraper/index.js'
+import { capcutDl, mediafire, rednote } from './scraper/index.js'
 
 const execAsync = promisify(exec);
 
