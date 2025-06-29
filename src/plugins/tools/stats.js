@@ -1,6 +1,5 @@
-import pkg from '@fizzxydev/baileys-pro';
+import { generateWAMessageFromContent } from '@fizzxydev/baileys-pro';
 import { getBuffer } from '../../helper/mediaMsg.js';
-const { proto, generateWAMessageFromContent } = pkg;
 import os from 'os';
 import si from 'systeminformation';
 

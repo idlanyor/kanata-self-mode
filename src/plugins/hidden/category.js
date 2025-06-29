@@ -1,6 +1,6 @@
 // import { helpMessage } from '../../helper/help.js'
-// import pkg from '@fizzxydev/baileys-pro';
-// const { proto, generateWAMessageFromContent } = pkg;
+// import { proto, generateWAMessageFromContent } from '@fizzxydev/baileys-pro';
+// 
 // import loadAssets from '../../helper/loadAssets.js';
 
 // export const handler = ["category", "c", "kategori"]

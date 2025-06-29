@@ -43,15 +43,18 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
     const encodedBg = encodeURIComponent(bgColor);
 
     let profilePic = await sock.profilePictureUrl(id, "image")
-        .catch(() => "https://fastrestapis.fasturl.cloud/file/v2/CYOz4sa.jpg");
+        .catch(() => globalThis.hikaru.baseUrl + "file/v2/CYOz4sa.jpg");
     const encodedAvatar = encodeURIComponent(profilePic);
 
-    const apiUrl = `https://fastrestapis.fasturl.cloud/maker/quotly?name=${encodedName}&text=${encodedText}&avatar=${encodedAvatar}&bgColor=${encodedBg}`;
+    const apiUrl = globalThis.hikaru.baseUrl + `maker/quotly?name=${encodedName}&text=${encodedText}&avatar=${encodedAvatar}&bgColor=${encodedBg}`;
 
     try {
         const { data: imageBuffer } = await axios.get(apiUrl, {
             responseType: "arraybuffer",
-            headers: { accept: "image/png" }
+            headers: { 
+                accept: "image/png",
+                'x-api-key': globalThis.hikaru.apiKey
+            }
         });
 
         const stickerOption = {

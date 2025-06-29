@@ -1,5 +1,4 @@
-import pkg from '@fizzxydev/baileys-pro';
-const { proto, generateWAMessageFromContent } = pkg
+import {proto,generateWAMessageFromContent} from '@fizzxydev/baileys-pro';
 import moment from 'moment';
 import os from 'os';
 

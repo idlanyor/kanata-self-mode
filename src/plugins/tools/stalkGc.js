@@ -1,5 +1,5 @@
-import pkg from '@fizzxydev/baileys-pro';
-const { proto, generateWAMessageFromContent } = pkg;
+import { proto, generateWAMessageFromContent } from '@fizzxydev/baileys-pro';
+
 
 export const handler = 'gcstalk'
 export const description = 'Retrieve GC Information by Invite Link'

@@ -53,14 +53,15 @@ export default async ({ sock, m, id, psn, sender }) => {
         }
 
         // Get video from FastURL API
-        const response = await axios.get(`https://fastrestapis.fasturl.cloud/downup/ytmp4`, {
+        const response = await axios.get(globalThis.hikaru.baseUrl + `downup/ytmp4`, {
             params: {
                 url: videoUrl,
                 quality: quality,
                 // server: 'server2'
             },
             headers: {
-                'accept': 'application/json'
+                'accept': 'application/json',
+                'x-api-key': globalThis.hikaru.apiKey
             }
         });
 

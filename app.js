@@ -22,7 +22,6 @@ import Group from './src/database/models/Group.js';
 import { addMessageHandler } from './src/helper/message.js'
 // import { autoAI } from './src/lib/autoai.js'
 import GeminiHandler from './src/lib/geminiHandler.js';
-import { loadSavedSessions } from './src/plugins/bot/jadibot.js';
 
 const app = express()
 const server = createServer(app)
@@ -357,6 +356,7 @@ async function prosesPerintah({ command, sock, m, id, sender, noTel, attf }) {
         // }
 
     } catch (error) {
+        throw error
         logger.error('Error in message processing:', error);
         await sock.sendMessage(id, {
             text: "Waduh error nih bestie! Coba lagi ntar ya 🙏"
@@ -756,19 +756,6 @@ export async function startBot() {
                 // Call events
                 if (events['call']) {
                     call(events['call'], sock);
-                }
-
-                // Connection update & load saved sessions
-                if (events['connection.update']) {
-                    const { connection } = events['connection.update'];
-                    if (connection === 'open') {
-                        try {
-                            await loadSavedSessions(sock);
-                            logger.success('Successfully loaded saved jadibot sessions');
-                        } catch (err) {
-                            logger.error('Error loading saved sessions:', err);
-                        }
-                    }
                 }
             }
         );

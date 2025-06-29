@@ -216,6 +216,18 @@
       "antitoxic": false,
       "antipromosi": false,
       "only_admin": false
+    },
+    {
+      "group_id": "120363400556481479@g.us",
+      "welcome_message": "Selamat datang @user di @group!\n\nSilakan baca deskripsi grup ya~",
+      "goodbye_message": "Selamat tinggal @user!\nSemoga kita berjumpa lagi di lain waktu.",
+      "autoai": false,
+      "antilink": false,
+      "welcome": true,
+      "goodbye": false,
+      "antitoxic": false,
+      "antipromosi": false,
+      "only_admin": false
     }
   ],
   "spam_detection": [

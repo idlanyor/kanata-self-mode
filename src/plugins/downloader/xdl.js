@@ -14,8 +14,11 @@ export default async ({ sock, m, id, psn }) => {
     try {
         await sock.sendMessage(id, { react: { text: '⏳', key: m.key } });
 
-        const res = await axios.get(`https://fastrestapis.fasturl.cloud/downup/twdown/simple?url=${encodeURIComponent(psn)}`, {
-            headers: { accept: 'application/json' }
+        const res = await axios.get(globalThis.hikaru.baseUrl + `downup/twdown/simple?url=${encodeURIComponent(psn)}`, {
+            headers: { 
+                accept: 'application/json',
+                'x-api-key': globalThis.hikaru.apiKey
+            }
         });
 
         const result = res.data?.result;

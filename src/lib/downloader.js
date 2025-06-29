@@ -23,12 +23,17 @@ const execAsync = promisify(exec);
 // }
 export async function threadsDl(url) {
     try {
-        let { data } = await threads(url)
+        const { data } = await axios.get(globalThis.hikaru.baseUrl + `downup/threadsdown?url=${encodeURIComponent(url)}`, {
+            headers: {
+                accept: 'application/json',
+                'x-api-key': globalThis.hikaru.apiKey
+            }
+        });
         // return data
         return {
-            title: data.title || 'Kanata V3',
-            author: data.author,
-            downloadUrl: data.downloadUrl
+            title: data.result.caption || 'Kanata V3',
+            author: data.result.username,
+            downloadUrl: data.result.url
         }
     } catch (error) {
         return error
@@ -63,8 +68,13 @@ export async function rednoteDl(url) {
 // console.log(await threadsDl('https://www.threads.net/@abdulrahimroni/post/DG6NL3dtKO5'))
 export async function fb(url) {
     try {
-        let { data } = await fbdl(url)
-        return data.downloads[0].url
+        const { data } = await axios.get(globalThis.ryzen.baseUrl + `downloader/fbdl?url=${encodeURIComponent(url)}`, {
+            headers: {
+                accept: 'application/json',
+            }
+        });
+        console.log(data)
+        return data.data[0].url
     } catch (error) {
         return error
     }

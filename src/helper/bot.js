@@ -2,7 +2,6 @@ import {
     makeWASocket,
     fetchLatestBaileysVersion,
     makeCacheableSignalKeyStore,
-    makeInMemoryStore,
     useMultiFileAuthState,
     DisconnectReason,
     Browsers
@@ -36,15 +35,6 @@ class Kanata {
             });
             const pLogger = MAIN_LOGGER.child({});
             pLogger.level = "silent";
-
-            // Initialize store
-            const store = useStore ? makeInMemoryStore({ logger: pLogger }) : undefined;
-            if (store) {
-                store.readFromFile(`store-${this.sessionId}.json`);
-                setInterval(() => {
-                    store.writeToFile(`store-${this.sessionId}.json`);
-                }, 10000 * 6);
-            }
 
             // Initialize authentication
             const P = pino({ level: "silent" });
@@ -81,8 +71,7 @@ class Kanata {
                 },
             });
 
-            // Bind store and credentials
-            store?.bind(sock.ev);
+            // Bind  credentials
             sock.ev.on("creds.update", saveCreds);
 
             // Handle QR code

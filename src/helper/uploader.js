@@ -65,9 +65,10 @@ export const uploadGambar2 = async (buffer) => {
         const form = new FormData()
         form.append('file', readStream)
         const headers = {
-            ...form.getHeaders()
+            ...form.getHeaders(),
+            'x-api-key': globalThis.hikaru.apiKey
         };
-        const { data } = await axios.post('https://fastrestapis.fasturl.cloud/downup/uploader-v2', form, {
+        const { data } = await axios.post(globalThis.hikaru.baseUrl + 'downup/uploader-v2', form, {
             headers
         })
         return data.result

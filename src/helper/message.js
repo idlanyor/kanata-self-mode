@@ -1,5 +1,4 @@
-import pkg from '@fizzxydev/baileys-pro'
-const { generateWAMessageFromContent, proto } = pkg
+import { proto, generateWAMessageFromContent } from '@fizzxydev/baileys-pro'
 
 export function addMessageHandler(m, sock) {
     m.chat = m.key.remoteJid;

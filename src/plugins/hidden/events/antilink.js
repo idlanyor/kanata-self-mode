@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs';
-import pkg from '@fizzxydev/baileys-pro';
-const { proto, generateWAMessageFromContent } = pkg;
+import { proto, generateWAMessageFromContent } from '@fizzxydev/baileys-pro';
+
 
 const LINK_PATTERNS = [
     'http://',
