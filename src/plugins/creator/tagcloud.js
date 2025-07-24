@@ -152,7 +152,7 @@ async function generateWordCloud(text, width = 800, height = 600) {
     ctx.font = '20px Arial';
     ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
     ctx.textAlign = 'right';
-    ctx.fillText('Kanata Bot WordCloud', width - 20, height - 20);
+    ctx.fillText('Antidonasi Inc. WordCloud', width - 20, height - 20);
     
     return canvas.toBuffer();
 }

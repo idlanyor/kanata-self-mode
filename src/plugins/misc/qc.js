@@ -58,7 +58,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
         });
 
         const stickerOption = {
-            pack: "Kanata Bot",
+            pack: "Antidonasi Inc.",
             author: "wa.me/628157695152",
             type: StickerTypes.FULL,
             quality: 100

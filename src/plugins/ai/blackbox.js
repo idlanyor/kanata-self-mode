@@ -1,4 +1,5 @@
 import { hikaru } from "../../helper/hikaru.js";
+import { withPluginHandling } from "../../helper/pluginUtils.js";
 
 export const handler = 'blackbox'
 export const description = "AI Blackbox provided by *FastURL*";
@@ -10,7 +11,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
         })
         return
     }
-    try {
+    await withPluginHandling(sock, m.key, id, async () => {
         const { data } = await hikaru('aillm/blackbox', {
             params: {
                 ask: psn,
@@ -35,8 +36,5 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
         // console.log(ingfo.trim())
         await sock.sendMessage(id, { text: data.result }, { quoted:m });
         await sock.sendMessage(id, { text: ingfo.trim() }, { quoted:m });
-    } catch (error) {
-        console.log(error);
-        await sock.sendMessage(id, { text: `Terjadi kesalahan di sisi server ${error}` });
-    }
+    });
 };

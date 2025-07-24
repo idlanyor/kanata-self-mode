@@ -46,14 +46,14 @@
 //     else greeting = 'Malam'
 
 //     await sock.sendMessage(id, {
-//         text: `╭─「 KANATA BOT 」
+//         text: `╭─「 Antidonasi Inc. 」
 // ├ Selamat ${greeting} 👋
 // ├ @${noTel}
 // │
 // ├ Silahkan pilih kategori menu
 // ├ yang ingin ditampilkan
 // ╰──────────────────`,
-//         footer: '© 2024 Kanata Bot • Created by Roy',
+//         footer: '© 2024 Antidonasi Inc. • Created by Roy',
 //         buttons: [
 //             {
 //                 buttonId: 'action',
@@ -77,7 +77,7 @@
 //             isForwarded: true,
 //             forwardingScore: 999,
 //             externalAdReply: {
-//                 title: '乂 Kanata Bot Menu 乂',
+//                 title: '乂 Antidonasi Inc. Menu 乂',
 //                 body: 'Click here to join our channel!',
 //                 thumbnailUrl: 'https://files.catbox.moe/2wynab.jpg',
 //                 sourceUrl: 'https://whatsapp.com/channel/0029VagADOLLSmbaxFNswH1m',

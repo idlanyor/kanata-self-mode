@@ -1,5 +1,6 @@
-import axios from 'axios';
 import yts from 'yt-search';
+import { withPluginHandling } from "../../helper/pluginUtils.js";
+import { hikaru } from "../../helper/hikaru.js";
 
 export const description = "YouTube Video Player";
 export const handler = "ypv";
@@ -21,10 +22,7 @@ export default async ({ sock, m, id, psn, sender }) => {
         return;
     }
 
-    try {
-        // Kirim reaction mulai
-        await m.react('wait');
-        
+    await withPluginHandling(sock, m.key, id, async () => {
         // Extract quality flag if present
         let quality = '360' // default quality
         const qualityMatch = psn.match(/--(\d+)/)
@@ -53,15 +51,14 @@ export default async ({ sock, m, id, psn, sender }) => {
         }
 
         // Get video from FastURL API
-        const response = await axios.get(globalThis.hikaru.baseUrl + `downup/ytmp4`, {
+        const response = await hikaru(`downup/ytmp4`, {
             params: {
                 url: videoUrl,
                 quality: quality,
-                // server: 'server2'
+                server: 'server2'
             },
             headers: {
-                'accept': 'application/json',
-                'x-api-key': globalThis.hikaru.apiKey
+                'accept': 'application/json'
             }
         });
 
@@ -85,19 +82,5 @@ export default async ({ sock, m, id, psn, sender }) => {
             fileName: `${result.title}-${result.quality}.mp4`,
             caption: `${result.title} - ${result.quality}`
         }, { quoted: m });
-
-        await m.react('success');
-
-    } catch (error) {
-        await m.react('error');
-        await sock.sendMessage(id, { 
-            text: `❌ *GAGAL MEMPROSES*\n\n` +
-                  `*Pesan Error:* ${error.message}\n\n` +
-                  `*Solusi:*\n` +
-                  `- Coba video lain\n` +
-                  `- Pastikan URL/judul video benar\n` +
-                  `- Coba kualitas video yang lebih rendah\n` +
-                  `- Laporkan ke owner jika masih error`
-        });
-    }
+    });
 };

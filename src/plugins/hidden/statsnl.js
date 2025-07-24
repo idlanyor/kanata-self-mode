@@ -93,13 +93,13 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
     //     {
     //         orderMessage: {
     //             productId: "8569472943180260",
-    //             title: "Kanata Bot",
+    //             title: "Antidonasi Inc.",
     //             description: "now",
     //             currencyCode: "IDR",
     //             message: await systemSpec(),
     //             priceAmount1000: "91000",
     //             thumbnail: await getBuffer('https://files.catbox.moe/2wynab.jpg'),
-    //             surface: "Kanata Bot",
+    //             surface: "Antidonasi Inc.",
     //             contextInfo: { mentionedJid: [id] },
     //         },
     //     }, {});

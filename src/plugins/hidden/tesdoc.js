@@ -5,7 +5,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
     let buttonMessage = {
         document: { url: "https://www.youtube.com/" },
         mimetype: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        fileName: "「 Kanata 」",
+        fileName: "「 Antidonasi Inc. 」",
         fileLength: 999999999999999,
         pageCount: 999999999999999,
         contextInfo: {
@@ -17,7 +17,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
                 previewType: "pdf",
                 title: "kamu mana punya",
                 body: "ini",
-                thumbnail: fs.readFileSync("./kanata.jpg"),
+                thumbnail: fs.readFileSync("./Antidonasi Inc..jpg"),
                 sourceUrl: "https://www.youtube.com/",
             },
         },

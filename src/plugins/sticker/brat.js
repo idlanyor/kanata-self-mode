@@ -6,7 +6,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
     if(!psn) return m.reply('teksnya mana cik?')
     const { url } = await fetch(`https://brat.caliphdev.com/api/brat?text=${psn}`)
     const stickerOption = {
-        pack: "KanataBot",
+        pack: "Antidonasi Inc.Bot",
         author: "Roy",
         type: StickerTypes.FULL,
         quality: 100,

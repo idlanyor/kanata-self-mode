@@ -4,6 +4,8 @@ import { promisify } from 'util';
 import fs from 'fs/promises';
 import path from 'path';
 import { capcutDl, mediafire, rednote } from './scraper/index.js'
+import { hikaru } from "../helper/hikaru.js";
+
 
 const execAsync = promisify(exec);
 
@@ -12,7 +14,7 @@ const execAsync = promisify(exec);
 //         let { data } = await tiktokDl(url)
 //         // return result.data
 //         return {
-//             title: data.caption || 'Kanata V3',
+//             title: data.caption || 'Antidonasi Inc.',
 //             video: data.video,
 //             audio: data.audio,
 //             author: data.author,
@@ -21,17 +23,17 @@ const execAsync = promisify(exec);
 //         return error
 //     }
 // }
+
 export async function threadsDl(url) {
     try {
-        const { data } = await axios.get(globalThis.hikaru.baseUrl + `downup/threadsdown?url=${encodeURIComponent(url)}`, {
+        const { data } = await hikaru(`downup/threadsdown?url=${encodeURIComponent(url)}`, {
             headers: {
-                accept: 'application/json',
-                'x-api-key': globalThis.hikaru.apiKey
+                accept: 'application/json'
             }
         });
         // return data
         return {
-            title: data.result.caption || 'Kanata V3',
+            title: data.result.caption || 'Antidonasi Inc.',
             author: data.result.username,
             downloadUrl: data.result.url
         }

@@ -55,5 +55,5 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
         { type: "image", data: { url: "https://telegra.ph/file/8360caca1efd0f697d122.jpg" } },
         { type: "image", data: { url: "https://telegra.ph/file/8360caca1efd0f697d122.jpg" } },
         { type: "image", data: { url: "https://telegra.ph/file/8360caca1efd0f697d122.jpg" } }
-    ], { caption: "© Kanata -2025" });
+    ], { caption: "© Antidonasi Inc. -2025" });
 };

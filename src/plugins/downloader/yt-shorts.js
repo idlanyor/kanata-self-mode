@@ -1,4 +1,5 @@
-import axios from 'axios';
+import { withPluginHandling } from "../../helper/pluginUtils.js";
+import { hikaru } from "../../helper/hikaru.js";
 
 export const description = "YouTube Short Downloader provided by *Roy*";
 export const handler = ['ysd', 'yd2']
@@ -9,21 +10,19 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
         });
         return;
     }
-    try {
-        await m.react('wait')
+    await withPluginHandling(sock, m.key, id, async () => {
         await sock.sendMessage(id, { text: '🔄 *Sedang diproses...* \n_Mohon tunggu sebentar_ ...' });
 
         // Cek apakah input adalah URL YouTube
         if (psn.match(/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/)) {
-            const response = await axios.get(globalThis.hikaru.baseUrl + `downup/ytmp4`, {
+            const response = await hikaru(`downup/ytmp4`, {
                 params: {
                     url: psn,
                     quality: '360',
                     server: 'server2'
                 },
                 headers: {
-                    'accept': 'application/json',
-                    'x-api-key': globalThis.hikaru.apiKey
+                    'accept': 'application/json'
                 }
             });
 
@@ -41,15 +40,8 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
                 video: { url: result.media },
                 caption: caption
             }, { quoted: m });
-
-            await m.react('success')
         } else {
-            await m.react('error')
-            await sock.sendMessage(id, { text: '❌ *URL tidak valid! Masukkan URL YouTube yang benar.*' });
+            throw new Error('URL tidak valid! Masukkan URL YouTube yang benar.');
         }
-    } catch (error) {
-        await m.react('error')
-        await sock.sendMessage(id, { text: '❌ *Ups,Terjadi kesalahan Silahkan coba beberapa saat lagi*' });
-        throw error
-    }
+    });
 };

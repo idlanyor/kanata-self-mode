@@ -21,7 +21,7 @@ function drawSpotifyPlayer() {
     ctx.fillStyle = '#1DB954';
     ctx.font = 'bold 28px Arial, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('Kanata Spotify Player', 400, 50);
+    ctx.fillText('Antidonasi Inc. Spotify Player', 400, 50);
 
     const albumSize = 250;
     ctx.fillStyle = '#333333';

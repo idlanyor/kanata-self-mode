@@ -174,8 +174,8 @@ export function addMessageHandler(m, sock) {
     // Method untuk button biasa
     m.sendButton = async (text, sections = [], opts = {}) => {
         const defaultOpts = {
-            header: 'Kanata Bot',
-            footer: '© 2024 Kanata',
+            header: 'Antidonasi Inc.',
+            footer: '© 2024 Antidonasi Inc.',
             viewOnce: true,
             quoted: true
         }
@@ -211,11 +211,11 @@ export function addMessageHandler(m, sock) {
     // Method buat interactive button
     m.sendInteractiveButton = async (text, buttons = [], opts = {}) => {
         const defaultOpts = {
-            header: 'Kanata Bot',
-            footer: '© 2024 Kanata',
+            header: 'Antidonasi Inc.',
+            footer: '© 2024 Antidonasi Inc.',
             media: null,
             mediaType: 'image',
-            newsletterName: 'Kanata Bot',
+            newsletterName: 'Antidonasi Inc.',
             sections: [], // Buat list sections
             buttonText: 'Pilih Menu', // Text buat list button
             externalAdReply: {
@@ -277,7 +277,7 @@ export function addMessageHandler(m, sock) {
                     newsletterAdminInviteMessage: {
                         newsletterJid: '120363293401077915@newsletter',
                         newsletterName: 'Roy',
-                        caption: 'Kanata V3'
+                        caption: 'Antidonasi Inc.'
                     }
                 }
             }
@@ -290,16 +290,16 @@ export function addMessageHandler(m, sock) {
 
     m.sendListMessage = async (text, sections = [], opts = {}) => {
         const defaultOpts = {
-            header: 'Kanata Bot',
-            footer: '© 2024 Kanata',
+            header: 'Antidonasi Inc.',
+            footer: '© 2024 Antidonasi Inc.',
             buttonText: 'Pilih Menu',
             quoted: true,
-            newsletterName: 'Kanata Bot',
+            newsletterName: 'Antidonasi Inc.',
             externalAdReply: {
-                title: "Kanata Bot",
+                title: "Antidonasi Inc.",
                 body: "Simple WhatsApp Bot",
                 thumbnailUrl: globalThis.ppUrl,
-                sourceUrl: "https://github.com/base-kanata",
+                sourceUrl: "https://github.com/base-Antidonasi Inc.",
                 mediaType: 1,
                 renderLargerThumbnail: true
             }

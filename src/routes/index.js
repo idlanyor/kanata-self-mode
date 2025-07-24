@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
         </head>
         <body class="bg-gray-900 min-h-screen flex items-center justify-center">
             <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-96">
-                <h1 class="text-3xl font-bold text-white mb-6 text-center">Login Kanata Base</h1>
+                <h1 class="text-3xl font-bold text-white mb-6 text-center">Login Antidonasi Inc. Base</h1>
                 <form class="space-y-4">
                     <div>
                         <label class="block text-gray-300 mb-2" for="username">Username</label>

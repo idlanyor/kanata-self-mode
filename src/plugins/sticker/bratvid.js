@@ -11,7 +11,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
         }
     }).then(res => res.json())
     const stickerOption = {
-        pack: "KanataBot",
+        pack: "Antidonasi Inc.Bot",
         author: "Roy",
         type: StickerTypes.FULL,
         quality: 100,

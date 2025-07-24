@@ -91,7 +91,7 @@ export default async ({ sock, m, id, psn }) => {
         
         // Buat sticker
         const stickerOption = {
-            pack: "KanataBot",
+            pack: "Antidonasi Inc.Bot",
             author: "Roy",
             type: StickerTypes.FULL,
             quality: 100,

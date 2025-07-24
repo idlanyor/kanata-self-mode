@@ -80,7 +80,7 @@ export const schedulePrayerReminders = async (sock, chatId) => {
                         forwardingScore: 9999999,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363305152329358@newsletter',
-                            newsletterName: 'Kanata Prayer Times',
+                            newsletterName: 'Antidonasi Inc. Prayer Times',
                             serverMessageId: -1
                         },
                         externalAdReply: {
@@ -158,7 +158,7 @@ function generatePrayerMessage(name, time) {
     }
 
     text += `╰──────────────────\n\n`;
-    text += `_Powered by Kanata-V3_`;
+    text += `_Powered by Antidonasi -V3_`;
     return text;
 }
 

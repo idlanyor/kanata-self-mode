@@ -48,7 +48,7 @@ export default async ({ sock, id, m, noTel, sender }) => {
         }];
 
         let listMessage = {
-            title: '✨ *Daftar AI Kanata* ✨',
+            title: '✨ *Daftar AI Antidonasi Inc.* ✨',
             sections
         };
 
@@ -64,7 +64,7 @@ export default async ({ sock, id, m, noTel, sender }) => {
                             text: "🔍 *Pilih AI favoritmu dari daftar di bawah ini!*"
                         }),
                         footer: proto.Message.InteractiveMessage.Footer.create({
-                            text: `©Kanata V3 || Roy`
+                            text: `©Antidonasi Inc. || Roy`
                         }),
                         header: proto.Message.InteractiveMessage.Header.create({
                             title: `🧠 *AI Menu*`
@@ -88,7 +88,7 @@ export default async ({ sock, id, m, noTel, sender }) => {
                 message: {
                     newsletterAdminInviteMessage: {
                         newsletterJid: '120363302865191524@newsletter',
-                        newsletterName: 'Kanata Bot',
+                        newsletterName: 'Antidonasi Inc.',
                         caption: `${sender} : List AI`
                     }
                 }

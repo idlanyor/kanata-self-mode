@@ -1,4 +1,6 @@
 
+import { withPluginHandling } from "../../helper/pluginUtils.js";
+
 export const handler = 'deepseek'
 export const description = "Deepseek AI Provided by Ryzendesu";
 export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
@@ -9,8 +11,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
         })
         return
     }
-    sock.sendMessage(id, { react: { text: '⏱️', key: m.key } })
-    try {
+    await withPluginHandling(sock, m.key, id, async () => {
         const prompt = "be a helpfull assistant"
         const response = await fetch(`https://api.ryzendesu.vip/api/ai/deepseek?text=${psn}&prompt=${prompt}`);
 
@@ -18,11 +19,5 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
 
 
         await sock.sendMessage(id, { text: data.answer });
-        await sock.sendMessage(id, { react: { text: '✅', key: m.key } })
-    } catch (error) {
-        console.error("Error:", error);
-        await sock.sendMessage(id, { react: { text: '❌', key: m.key } })
-    }
-
-
+    });
 };

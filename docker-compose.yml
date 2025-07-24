@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  kanata:
+  Antidonasi Inc.:
     build: .
-    container_name: kanata-bot
+    container_name: Antidonasi Inc.-bot
     restart: unless-stopped
     volumes:
       - .:/app

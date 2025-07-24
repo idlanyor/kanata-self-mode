@@ -5,23 +5,19 @@
  * @module : ES6 Module
  */
 import {  proto, prepareWAMessageMedia, generateWAMessageFromContent } from '@fizzxydev/baileys-pro';
-
 import { pinSearch } from '../../lib/scraper/pinterest.js';
+import { handleEmptyPrompt, withPluginHandling } from "../../helper/pluginUtils.js";
 
-export const handler = 'pinterest'
-export const description = 'Search Images from Pinterest'
+export const handler = 'pinterest';
+export const description = 'Search Images from Pinterest';
 
 export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
     if (!psn) {
-        await sock.sendMessage(id, {
-            text: '⚠️ Silakan masukkan kata kunci pencarian!\n\nContoh: !pinterest anime ghibli'
-        });
+        await handleEmptyPrompt(sock, id, "pinterest", "anime ghibli");
         return;
     }
 
-    await sock.sendMessage(id, { react: { text: '⏱️', key: m.key } })
-
-    try {
+    await withPluginHandling(sock, m.key, id, async () => {
         const results = (await pinSearch(psn)).data.results;
 
         if (!results.length) {
@@ -88,7 +84,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
                             text: `*[PINTEREST SEARCH RESULTS]*\n\n🔍 Kata kunci: "${psn}"\n📸 Total hasil: ${validResults.length}`
                         }),
                         footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                            text: ' © Copyright By KanataV3'
+                            text: ' © Copyright By Antidonasi Inc.V3'
                         }),
                         header: proto.Message.InteractiveMessage.Header.fromObject({
                             hasMediaAttachment: false
@@ -102,13 +98,5 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
         }, { id: m.chat, quoted:m });
 
         await sock.relayMessage(id, message.message, { messageId: message.key.id });
-        await sock.sendMessage(id, { react: { text: '✅', key: m.key } });
-
-    } catch (error) {
-        console.error('Pinterest Error:', error);
-        await sock.sendMessage(id, {
-            text: `❌ Terjadi kesalahan: ${error.message}`
-        });
-        await sock.sendMessage(id, { react: { text: '❌', key: m.key } });
-    }
+    });
 }; 

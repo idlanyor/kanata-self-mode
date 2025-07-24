@@ -1,10 +1,12 @@
-import { gemmaGroq } from "../../lib/ai.js";
+import { gemmaGroq as gemmaGroqAI } from "../../lib/ai.js";
+import { createAIHandler } from "./_helper.js";
+
 export const description = "AI Gemma provided by *Groq x Google*";
-export const handler = "gemma"
-export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
-    if (psn === '') {
-        sock.sendMessage(id, { text: "prefix *gemma* Tanyakan sesuatu kepada Gemma\n contoh : gemma siapa presiden indonesia saat ini" })
-        return
-    }
-    await sock.sendMessage(id, { text: await gemmaGroq(psn) });
-};
+export const handler = "gemma";
+
+const gemmaGroq = async ({ prompt }) => {
+    return await gemmaGroqAI(prompt);
+}
+
+export default createAIHandler(gemmaGroq, handler, "siapa presiden indonesia saat ini?");
+

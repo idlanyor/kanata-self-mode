@@ -1,6 +1,7 @@
 import {proto,generateWAMessageFromContent} from '@fizzxydev/baileys-pro';
 import moment from 'moment';
 import os from 'os';
+import { sendReaction } from "../../helper/pluginUtils.js";
 
 export const description = "Ping Bot & System Info";
 export const handler = "ping";
@@ -56,7 +57,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
 
     const message = generateWAMessageFromContent(id, proto.Message.fromObject({
         extendedTextMessage: {
-            text: `*🤖 KANATA BOT STATUS*\n\n` +
+            text: `*🤖 Antidonasi Inc. STATUS*\n\n` +
                   `*⚡ Response Time:* ${pingTime} detik\n\n` +
                   `*💻 System Information*\n` +
                   `➸ *Platform:* ${sysInfo.platform} (${sysInfo.arch})\n` +
@@ -65,12 +66,12 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
                   `➸ *Used RAM:* ${sysInfo.ram.used}\n` +
                   `➸ *Free RAM:* ${sysInfo.ram.free}\n\n` +
                   `*⏰ Uptime:* ${sysInfo.uptime.hours}h ${sysInfo.uptime.minutes}m ${sysInfo.uptime.seconds}s\n\n` +
-                  `_Powered by Kanata Bot_`,
+                  `_Powered by Antidonasi `,
             contextInfo: {
                 isForwarded: true,
                 forwardingScore: 9999999,
                 externalAdReply: {
-                    title: `乂 Kanata Bot Status 乂`,
+                    title: `乂 Antidonasi Inc. Status 乂`,
                     body: `Response Time: ${pingTime}s`,
                     mediaType: 1,
                     previewType: 0,
@@ -92,10 +93,5 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
     if (pingTime > 3) reactionEmoji = '⚡'; // Medium
     if (pingTime > 5) reactionEmoji = '🐌'; // Slow
     
-    await sock.sendMessage(id, { 
-        react: { 
-            text: reactionEmoji, 
-            key: m.key 
-        } 
-    });
+    await sendReaction(sock, m.key, reactionEmoji);
 };

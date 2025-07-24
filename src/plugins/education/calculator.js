@@ -32,7 +32,7 @@ const helpText = `⚡ *KALKULATOR PINTAR* ⚡
 • Bisa pakai operator: + - * / ^ %
 • Bisa pakai fungsi: sin, cos, tan, log, sqrt
 
-_Powered by Kanata-V3_`;
+_Powered by Antidonasi -V3_`;
 
 export default async ({ sock, m, id, psn, sender }) => {
     if (!psn) {

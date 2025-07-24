@@ -21,7 +21,7 @@ export default async ({ sock, m, id, noTel }) => {
         const dbBackupPath = path.join(backupDir, `db_backup_${timestamp}.zip`);
 
         // Copy database ke folder backup
-        const dbPath = './database/kanata.db';
+        const dbPath = './database/Antidonasi Inc..db';
         if (!fs.existsSync(dbPath)) {
             throw new Error('Database file not found!');
         }
@@ -33,7 +33,7 @@ export default async ({ sock, m, id, noTel }) => {
         }
 
         // Copy database ke temp folder
-        fs.copyFileSync(dbPath, path.join(tempDir, 'kanata.db'));
+        fs.copyFileSync(dbPath, path.join(tempDir, 'Antidonasi Inc..db'));
 
         // Zip folder
         await zip(tempDir, dbBackupPath);

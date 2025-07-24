@@ -5,8 +5,8 @@
  * @module : ES6 Module
  */
 import {  proto, prepareWAMessageMedia, generateWAMessageFromContent } from '@fizzxydev/baileys-pro';
-
 import { shutterstockSearch } from '../../lib/scraper/shutterstock.js';
+import { withPluginHandling } from "../../helper/pluginUtils.js";
 
 export const handler = 'shutterstock'
 export const description = 'Search Images from Shutterstock'
@@ -19,9 +19,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
         return;
     }
 
-    await sock.sendMessage(id, { react: { text: '⏱️', key: m.key } })
-
-    try {
+    await withPluginHandling(sock, m.key, id, async () => {
         const results = (await shutterstockSearch(psn)).data.results;
         // console.log(results)
         if (!results.length) {
@@ -85,7 +83,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
                             text: `*[SHUTTERSTOCK SEARCH RESULTS]*\n\n🔍 Kata kunci: "${psn}"\n📸 Total hasil: ${results.length}`
                         }),
                         footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                            text: ' © Copyright By KanataV3'
+                            text: ' © Copyright By Antidonasi Inc.V3'
                         }),
                         header: proto.Message.InteractiveMessage.Header.fromObject({
                             hasMediaAttachment: false
@@ -99,12 +97,5 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
         }, { id: m.chat, quoted: m });
 
         await sock.relayMessage(id, message.message, { messageId: message.key.id });
-        await sock.sendMessage(id, { react: { text: '✅', key: m.key } });
-
-    } catch (error) {
-        await sock.sendMessage(id, {
-            text: `❌ Terjadi kesalahan: ${error.message}`
-        });
-        await sock.sendMessage(id, { react: { text: '❌', key: m.key } });
-    }
+    });
 }; 

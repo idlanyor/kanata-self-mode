@@ -1,27 +1,16 @@
 import fetch from 'node-fetch';
+import { handleEmptyPrompt, withPluginHandling } from "../../helper/pluginUtils.js";
 
-export const handler = 'short'
-export const description = 'Memendekkan URL menggunakan is.gd'
+export const handler = 'short';
+export const description = 'Memendekkan URL menggunakan is.gd';
 
 export default async ({ sock, m, id, psn, sender }) => {
     if (!psn) {
-        await sock.sendMessage(id, {
-            text: '⚠️ Format salah!\n\n*Penggunaan:*\n.short url\n.short url customAlias\n\n*Contoh:*\n.short https://google.com\n.short https://google.com googleku',
-            contextInfo: {
-                externalAdReply: {
-                    title: '乂 URL Shortener 乂',
-                    body: 'Please provide a valid URL',
-                    thumbnailUrl: 'https://files.catbox.moe/2wynab.jpg',
-                    sourceUrl: 'https://whatsapp.com/channel/0029VagADOLLSmbaxFNswH1m',
-                    mediaType: 1,
-                    renderLargerThumbnail: true
-                }
-            }
-        });
+        await handleEmptyPrompt(sock, id, "short", "https://google.com atau .short https://google.com googleku");
         return;
     }
 
-    try {
+    await withPluginHandling(sock, m.key, id, async () => {
         const args = psn.split(' ');
         const url = args[0];
         const customAlias = args[1];
@@ -44,15 +33,14 @@ export default async ({ sock, m, id, psn, sender }) => {
             throw new Error(data.errormessage);
         }
 
-        const message = `╭─「 *URL SHORTENER* 」
-├ *Original URL:* 
-├ ${url}
-├ 
-├ *Shortened URL:* 
-├ ${data.shorturl}
-╰──────────────────
-
-_Powered by is.gd_`;
+        const message = `╭─「 *URL SHORTENER* 」\n` +
+                        `├ *Original URL:* \n` +
+                        `├ ${url}\n` +
+                        `├ \n` +
+                        `├ *Shortened URL:* \n` +
+                        `├ ${data.shorturl}\n` +
+                        `╰──────────────────\n\n` +
+                        `_Powered by is.gd_`;
 
         await sock.sendMessage(id, {
             text: message,
@@ -67,35 +55,5 @@ _Powered by is.gd_`;
                 }
             }
         });
-
-        // Kirim reaksi sukses
-        await sock.sendMessage(id, {
-            react: {
-                text: '✅',
-                key: m.key
-            }
-        });
-
-    } catch (error) {
-        await sock.sendMessage(id, {
-            text: '❌ Terjadi kesalahan: ' + error.message,
-            contextInfo: {
-                externalAdReply: {
-                    title: '❌ Shortening Failed',
-                    body: 'An error occurred while shortening URL',
-                    thumbnailUrl: 'https://files.catbox.moe/2wynab.jpg',
-                    sourceUrl: 'https://whatsapp.com/channel/0029VagADOLLSmbaxFNswH1m',
-                    mediaType: 1,
-                }
-            }
-        });
-
-        // Kirim reaksi error
-        await sock.sendMessage(id, {
-            react: {
-                text: '❌',
-                key: m.key
-            }
-        });
-    }
+    });
 }; 

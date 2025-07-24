@@ -53,7 +53,7 @@ const helpText = `⚡ *CHAT SEBALIKNYA* ⚡
 ▸ .flip alien <teks>
   Contoh: .flip alien hello
 
-_Powered by Kanata-V3_`;
+_Powered by Antidonasi -V3_`;
 
 function flipText(text) {
     return text.split('').map(char => flipTable[char] || char).reverse().join('');
@@ -118,7 +118,7 @@ export default async ({ sock, m, id, psn, sender }) => {
 ├ *Result:* ${result}
 ╰──────────────────
 
-_Powered by Kanata-V3_`;
+_Powered by Antidonasi -V3_`;
 
         await sock.sendMessage(id, {
             text: message,

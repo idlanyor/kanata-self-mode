@@ -1,7 +1,7 @@
-// tqto Hikaru - FastUrl
-import axios from "axios";
 import fs from 'fs';
 import path from 'path';
+import { withPluginHandling } from "../../helper/pluginUtils.js";
+import { hikaru } from "../../helper/hikaru.js";
 
 // Simpan data penggunaan di file JSON
 const usageFile = path.join(process.cwd(), 'getcontact_usage.json');
@@ -65,37 +65,29 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
         }
     }
     
-    // Format nomor telepon
-    let formattedNumber = psn
-    if (psn.startsWith('@')) {
-        formattedNumber = psn.substring(1)
-    }
-    if (psn.startsWith('08')) {
-        formattedNumber = '62' + psn.substring(1)
-    }
-    
-    const base = globalThis.hikaru.baseUrl + `tool/getcontact?number=${formattedNumber}`
-
-    const { data } = await axios.get(base, {
-        headers: {
-            'x-api-key': globalThis.hikaru.apiKey
+    await withPluginHandling(sock, m.key, id, async () => {
+        // Format nomor telepon
+        let formattedNumber = psn
+        if (psn.startsWith('@')) {
+            formattedNumber = psn.substring(1)
         }
-    })
-    const text = `
-User Data:
-- Name: ${data.result.userData.name}
-- Phone: ${data.result.userData.phone}
-- Provider: ${data.result.userData.provider}
-
-Tags:
-- ${data.result.tags.join('\n- ')}
-`;
-    
-    // Update penggunaan jika bukan owner
-    if (!isOwner) {
-        usage[sender].count++;
-        saveUsage(usage);
-    }
-    
-    await sock.sendMessage(id, { text })
+        if (psn.startsWith('08')) {
+            formattedNumber = '62' + psn.substring(1)
+        }
+        
+        const { data } = await hikaru(`tool/getcontact?number=${formattedNumber}`, {
+            headers: {
+                'accept': 'application/json'
+            }
+        })
+        const text = `\nUser Data:\n- Name: ${data.result.userData.name}\n- Phone: ${data.result.userData.phone}\n- Provider: ${data.result.userData.provider}\n\nTags:\n- ${data.result.tags.join('\n- ')}\n`;
+        
+        // Update penggunaan jika bukan owner
+        if (!isOwner) {
+            usage[sender].count++;
+            saveUsage(usage);
+        }
+        
+        await sock.sendMessage(id, { text })
+    });
 };

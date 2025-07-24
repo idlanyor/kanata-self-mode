@@ -75,7 +75,7 @@ export async function groupParticipants(ev, sock) {
                 forwardingScore: 256,
                 externalAdReply: {
                     showAdAttribution: true,
-                    title: 'Kanata-V3',
+                    title: 'Antidonasi Inc.-V3',
                     body: groupName,
                     mediaType: 1,
                     thumbnailUrl: 'https://files.catbox.moe/2wynab.jpg',
@@ -102,7 +102,7 @@ export async function groupParticipants(ev, sock) {
 ${settings.welcome_message.replace('@user', `@${userId}`).replace('@group', groupName)}
 
 ─────────────────
-_Powered by Kanata-V3_`,
+_Powered by Antidonasi -V3_`,
                         mentions: [participant]
                     };
                     await sendMessage(participant, welcomeMsg);
@@ -124,7 +124,7 @@ Semoga kita berjumpa lagi!
 ${settings.goodbye_message.replace('@user', `@${userId}`).replace('@group', groupName)}
 
 ─────────────────
-_Powered by Kanata-V3_`,
+_Powered by Antidonasi -V3_`,
                         mentions: [participant]
                     };
                     await sendMessage(participant, goodbyeMsg);
@@ -144,7 +144,7 @@ Anda telah dipromosikan menjadi admin grup.
 👥 *Total Admin:* ${groupMetadata.participants.filter(p => p.admin).length}
 
 ─────────────────
-_Powered by Kanata-V3_`,
+_Powered by Antidonasi -V3_`,
                     mentions: [participant]
                 };
                 await sendMessage(participant, promoteMsg);
@@ -162,7 +162,7 @@ _Powered by Kanata-V3_`,
 👥 *Total Admin:* ${groupMetadata.participants.filter(p => p.admin).length}
 
 ─────────────────
-_Powered by Kanata-V3_`,
+_Powered by Antidonasi -V3_`,
                     mentions: [participant]
                 };
                 await sendMessage(participant, demoteMsg);

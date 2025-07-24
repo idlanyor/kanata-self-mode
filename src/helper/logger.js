@@ -87,7 +87,7 @@ export const logger = {
     },
     showBanner: () => {
         console.clear();
-        console.log(createBanner('Kanata-V3'));
+        console.log(createBanner('Antidonasi Inc.'));
         logger.divider();
         logger.system('Bot sedang diinisialisasi...');
         logger.divider();

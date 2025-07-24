@@ -179,7 +179,7 @@ function renderCalendarContent(quote, theme, showWeather, location) {
     
     // Footer
     ctx.font = theme.font.footer;
-    ctx.fillText('Powered by Kanata Bot', canvas.width/2, 1500);
+    ctx.fillText('Powered by Antidonasi ', canvas.width/2, 1500);
     
     // Tambahkan watermark
     ctx.font = '20px Arial';

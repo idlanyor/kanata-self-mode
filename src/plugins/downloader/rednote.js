@@ -67,7 +67,7 @@ export default async ({ sock, m, id, psn }) => {
                 url: downloadUrl
             },
             caption: `🎥 *${title || 'RedNote Video'}*\n\n` +
-                `_Downloaded by KanataV3_`,
+                `_Downloaded by Antidonasi Inc.V3_`,
             mimetype: 'video/mp4'
         }, { quoted: m });
 

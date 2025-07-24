@@ -63,7 +63,7 @@ export default async ({ sock, m, id, noTel }) => {
         // Hapus node_modules dan file database dari backup
         const excludeDirs = [
             path.join(tempDir, 'node_modules'),
-            path.join(tempDir, 'database', 'kanata.db'),
+            path.join(tempDir, 'database', 'Antidonasi Inc..db'),
             path.join(tempDir, '.git')
         ];
 

@@ -6,7 +6,7 @@ export const description = 'Transform Your Image Into Ghibli Style'
 export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
     if (Buffer.isBuffer(attf)) {
         const url = await uploadGambar(attf)
-        await m.reply('gambar sedang diproses,silahkan tunggu...\n\n_Fgsi x Kanata_')
+        await m.reply('gambar sedang diproses,silahkan tunggu...\n\n_Fgsi x Antidonasi Inc._')
         const { data } = await axios.get(`https://fgsi1-restapi.hf.space/api/ai/toGhibli`, {
             params: {
                 url
@@ -14,6 +14,6 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
             responseType: 'arraybuffer'
         })
         const imgBuffer = Buffer.from(data)
-        await sock.sendMessage(id, { image: imgBuffer, caption: 'Done cik \n\n_Fgsi x Kanata_' }, { quoted: m })
+        await sock.sendMessage(id, { image: imgBuffer, caption: 'Done cik \n\n_Fgsi x Antidonasi Inc._' }, { quoted: m })
     }
 };

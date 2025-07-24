@@ -43,12 +43,12 @@ export default async ({ sock, m, id, psn, sender, noTel, attf, mime }) => {
             `🔗 *Link:* ${fileUrl}\n\n` +
             `📝 *Note:* Klik tombol Copy Link untuk menyalin URL\n` +
             `atau gunakan tombol Visit Link untuk membuka file.\n\n` +
-            `_Powered by Kanata Bot_`;
+            `_Powered by Antidonasi _`;
 
         await sendIAMessage(id, btns, m, {
             header: '乂 Catbox File Uploader 乂',
             content: caption,
-            footer: '© 2024 Kanata Bot • Created with ❤️ by Roy',
+            footer: '© 2024 Antidonasi Inc. • Created with ❤️ by Roy',
             media: fileUrl,
             mediaType: mime?.startsWith('image/') ? "image" : "document"
         }, sock);

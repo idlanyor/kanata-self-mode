@@ -89,7 +89,7 @@ export default async ({ sock, m, id, psn, attf }) => {
 
         // Buat sticker
         const stickerOptions = {
-            pack: "Kanata sMeme",
+            pack: "Antidonasi Inc. sMeme",
             author: "Roy~404~",
             type: StickerTypes.FULL,
             quality: 100

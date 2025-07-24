@@ -1,14 +1,16 @@
 import fetch from 'node-fetch';
+import { handleEmptyPrompt, withPluginHandling } from "../../helper/pluginUtils.js";
 
 export const handler = 'npm';
 export const description = 'Cari info package dari npmjs.com';
 
 export default async ({ sock, m, id, psn }) => {
-    try {
-        if (!psn) {
-            return await sock.sendMessage(id, { text: '⚠️ Masukin nama package-nya lah, masa iya mau nyari angin? 😤\n\nContoh: *.npm axios*' });
-        }
+    if (!psn) {
+        await handleEmptyPrompt(sock, id, "npm", "axios");
+        return;
+    }
 
+    await withPluginHandling(sock, m.key, id, async () => {
         const res = await fetch(`https://registry.npmjs.org/${encodeURIComponent(psn)}`);
         
         if (res.status === 404) {
@@ -19,13 +21,12 @@ export default async ({ sock, m, id, psn }) => {
         const latestVersion = data['dist-tags']?.latest || 'unknown';
         const latestData = data.versions[latestVersion];
 
-        const responseText = `📦 *${data.name}* — v${latestVersion}
-📝 *Deskripsi:* ${data.description || 'Gak ada deskripsinya, misterius banget 😶'}
-👤 *Author:* ${latestData.author?.name || 'Gak tau siapa, mungkin alien 👽'}
-📅 *Diperbarui:* ${new Date(data.time[latestVersion]).toLocaleString()}
-🔗 *Link:* https://www.npmjs.com/package/${data.name}
-
-📥 *Install:* \`npm i ${data.name}\``;
+        const responseText = `📦 *${data.name}* — v${latestVersion}\n` +
+                             `📝 *Deskripsi:* ${data.description || 'Gak ada deskripsinya, misterius banget 😶'}\n` +
+                             `👤 *Author:* ${latestData.author?.name || 'Gak tau siapa, mungkin alien 👽'}\n` +
+                             `📅 *Diperbarui:* ${new Date(data.time[latestVersion]).toLocaleString()}\n` +
+                             `🔗 *Link:* https://www.npmjs.com/package/${data.name}\n\n` +
+                             `📥 *Install:* \`npm i ${data.name}\``;
 
         await sock.sendMessage(id, {
             text: responseText,
@@ -40,10 +41,7 @@ export default async ({ sock, m, id, psn }) => {
                 }
             }
         });
-    } catch (err) {
-        console.error('[NPM SEARCH ERROR]', err);
-        await sock.sendMessage(id, { text: `💥 Gagal nyari package: ${err.message}` });
-    }
+    });
 };
 
 export const help = {

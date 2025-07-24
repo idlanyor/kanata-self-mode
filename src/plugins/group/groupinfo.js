@@ -34,7 +34,7 @@ export default async ({ sock, m, id }) => {
 ${groupMetadata.desc || '(Tidak ada deskripsi)'}
 ╰──────────────────
 
-_Powered by Kanata-V3_`,
+_Powered by Antidonasi -V3_`,
                 contextInfo: {
                     mentionedJid: groupMetadata.owner ? [groupMetadata.owner] : [],
                     isForwarded: true,

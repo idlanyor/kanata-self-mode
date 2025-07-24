@@ -97,7 +97,7 @@ export default async ({ sock, m, id, psn }) => {
                 "🎙️ Qori: Misyari Rasyid Al-Afasy\n" +
                 "📚 Total Surah: " + result.data.total + "\n\n" +
                 "Silahkan pilih surah yang ingin didengarkan:",
-            footer: '© 2024 Kanata Bot',
+            footer: '© 2024 Antidonasi Inc.',
             buttons: [
                 {
                     buttonId: 'action',

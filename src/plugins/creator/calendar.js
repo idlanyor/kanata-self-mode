@@ -117,7 +117,7 @@ async function createCalendar(quote, backgroundUrl) {
     
     // Footer
     ctx.font = '30px Poppins';
-    ctx.fillText('Powered by Kanata Bot', canvas.width/2, 1500);
+    ctx.fillText('Powered by Antidonasi ', canvas.width/2, 1500);
     
     return canvas.toBuffer('image/png');
 }

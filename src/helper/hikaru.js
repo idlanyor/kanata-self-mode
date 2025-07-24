@@ -2,7 +2,10 @@ import '../global.js'
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-    baseURL: globalThis.hikaru
+    baseURL: globalThis.hikaru.baseUrl,
+    headers: {
+        "x-api-key": globalThis.hikaru.apikey
+    }
 })
 
 export const hikaru = async (url, config) => {

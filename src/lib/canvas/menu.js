@@ -190,7 +190,7 @@ export async function menuCard(username, handle, avatarUrl) {
         ctx.textAlign = 'right';
         ctx.font = '20px Delius';
         ctx.fillStyle = '#FFFFFF';
-        ctx.fillText('Bot Name: Kanata V3', canvas.width - 50, 145);
+        ctx.fillText('Bot Name: Antidonasi Inc.', canvas.width - 50, 145);
         ctx.fillText('Version: 3.0', canvas.width - 50, 175);
         ctx.fillText('Creator: Roy', canvas.width - 50, 205);
         ctx.fillText('Type: ES6 Module', canvas.width - 50, 235);
@@ -226,7 +226,7 @@ export async function menuCard(username, handle, avatarUrl) {
         ctx.textAlign = 'center';
         ctx.font = 'italic 18px Delius';
         ctx.fillStyle = '#E0E0E0';
-        ctx.fillText('© 2024 Kanata Bot • Created with ❤️ by Roy', canvas.width / 2, canvas.height - 40);
+        ctx.fillText('© 2024 Antidonasi Inc. • Created with ❤️ by Roy', canvas.width / 2, canvas.height - 40);
         ctx.restore();
 
         return canvas.toBuffer();

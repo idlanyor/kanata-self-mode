@@ -25,7 +25,7 @@ export default async ({ sock, id, m, noTel, sender }) => {
     for (const plugin in plugins) {
         if (plugin.toUpperCase() !== 'HIDDEN') {
             sections.push({
-                header: '╭─「 KANATA BOT MENU 」',
+                header: '╭─「 Antidonasi Inc. MENU 」',
                 highlight_label: '3.0',
                 title: `${emojis[plugin.toUpperCase()] || '📌'} ${plugin.toUpperCase()} MENU`,
                 rows: plugins[plugin].map((command) => {
@@ -61,7 +61,7 @@ export default async ({ sock, id, m, noTel, sender }) => {
     else if (hours >= 15 && hours < 18) greeting = 'Sore'
     else greeting = 'Malam'
 
-    const menuMessage = `╭─「 KANATA BOT 」
+    const menuMessage = `╭─「 Antidonasi Inc. 」
 ├ Selamat ${greeting} 👋
 ├ @${noTel}
 │
@@ -101,7 +101,7 @@ ${caption}
                 nativeFlowInfo: {
                     name: 'single_select',
                     paramsJson: JSON.stringify({
-                        title: '📚 DAFTAR MENU KANATA V3',
+                        title: '📚 DAFTAR MENU Antidonasi Inc.',
                         sections
                     }),
                 },
@@ -114,7 +114,7 @@ ${caption}
                 type: 1,
             }
         ],
-        footer: '© 2024 Kanata Bot • Created with ❤️ by Roy',
+        footer: '© 2024 Antidonasi Inc. • Created with ❤️ by Roy',
         headerType: 1,
         viewOnce: true,
         contextInfo: {
@@ -127,8 +127,8 @@ ${caption}
             },
             forwardingScore: 999,
             externalAdReply: {
-                title: '乂 Kanata V3 Menu 乂',
-                body: 'Welcome to Kanata Universe!',
+                title: '乂 Antidonasi Inc. Menu 乂',
+                body: 'Welcome to Antidonasi Inc. Universe!',
                 thumbnailUrl: globalThis.ppUrl,
                 sourceUrl: 'https://whatsapp.com/channel/0029VagADOLLSmbaxFNswH1m',
                 mediaType: 1,
@@ -145,7 +145,7 @@ ${caption}
                 newsletterAdminInviteMessage: {
                     newsletterJid: '120363293401077915@newsletter',
                     newsletterName: sender || 'User',
-                    caption: `${m.pushName} - ${noTel}` || 'Kanata V3'
+                    caption: `${m.pushName} - ${noTel}` || 'Antidonasi Inc.'
                 }
             }
         }
@@ -161,7 +161,7 @@ ${caption}
 //         newsletterAdminInviteMessage: {
 //             newsletterJid: '120363293401077915@newsletter',
 //             newsletterName: 'Roy',
-//             caption: 'Kanata'
+//             caption: 'Antidonasi Inc.'
 //         }
 //     }
 // }

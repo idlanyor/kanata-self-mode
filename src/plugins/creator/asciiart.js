@@ -68,5 +68,5 @@ export const help = {
     name: "ascii",
     description: "Konversi teks menjadi ASCII art",
     usage: ".ascii <teks> | [nomor font]",
-    example: ".ascii KANATA | 5"
+    example: ".ascii Antidonasi Inc. | 5"
 }; 

@@ -65,7 +65,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
                         text: `*[JKT 48 MEMBER LIST ${new Date().getFullYear()}]*`
                     }),
                     footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                        text: ' © Copyright By KanataV3'
+                        text: ' © Copyright By Antidonasi Inc.V3'
                     }),
                     header: proto.Message.InteractiveMessage.Header.fromObject({
                         hasMediaAttachment: false

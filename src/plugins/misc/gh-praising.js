@@ -47,7 +47,7 @@ export default async ({ sock, m, id, psn }) => {
 ├ ${data.result.praising}
 ╰──────────────────
 
-_Powered by Kanata-V3_`,
+_Powered by Antidonasi -V3_`,
                 contextInfo: {
                     isForwarded: true,
                     forwardingScore: 9999999,

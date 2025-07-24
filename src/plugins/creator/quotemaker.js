@@ -18,7 +18,7 @@ export const description = "✨ Buat quote keren dengan background dan font mena
 export default async ({ sock, m, id, psn, sender, noTel }) => {
     if (!psn) {
         await sock.sendMessage(id, {
-            text: "✍️ Format: *.quote teks | author*\n\nContoh: *.quote Hidup itu seperti kopi, kadang pahit kadang manis | Kanata*"
+            text: "✍️ Format: *.quote teks | author*\n\nContoh: *.quote Hidup itu seperti kopi, kadang pahit kadang manis | Antidonasi Inc.*"
         });
         return;
     }
@@ -65,7 +65,7 @@ export default async ({ sock, m, id, psn, sender, noTel }) => {
         // Kirim hasilnya
         await sock.sendMessage(id, {
             image: buffer,
-            caption: '✨ Quote maker by Kanata Bot'
+            caption: '✨ Quote maker by Antidonasi Inc.'
         }, { quoted:m });
 
     } catch (error) {

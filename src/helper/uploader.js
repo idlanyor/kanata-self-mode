@@ -61,7 +61,7 @@ export const uploadGambar = async (buffer) => {
 
 export const uploadGambar2 = async (buffer) => {
     try {
-        const readStream = bufferToReadStream(buffer, `/tmp/kanata_temp${Math.floor(Math.random() * 1000)}.jpg`);
+        const readStream = bufferToReadStream(buffer, `/tmp/Antidonasi Inc._temp${Math.floor(Math.random() * 1000)}.jpg`);
         const form = new FormData()
         form.append('file', readStream)
         const headers = {
@@ -79,9 +79,9 @@ export const uploadGambar2 = async (buffer) => {
 
 // (async () => {
 //     try {
-//         await fs.promises.access('./kanata.jpg');
+//         await fs.promises.access('./Antidonasi Inc..jpg');
 
-//         const result = await uploadGambar2(fs.createReadStream('./kanata.jpg'));
+//         const result = await uploadGambar2(fs.createReadStream('./Antidonasi Inc..jpg'));
 //         console.log(result);
 //     } catch (error) {
 //         console.error('Error uploading file:', error)

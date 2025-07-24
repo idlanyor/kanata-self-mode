@@ -24,7 +24,7 @@ export default async ({ sock, m, id }) => {
 ${adminList}
 ╰──────────────────
 
-_Powered by Kanata-V3_`,
+_Powered by Antidonasi Inc_`,
                 contextInfo: {
                     mentionedJid: admins.map(a => a.id),
                     isForwarded: true,

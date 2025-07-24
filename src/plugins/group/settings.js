@@ -27,13 +27,13 @@ export default async ({ sock, m, id, psn, sender }) => {
 ├ .settings <fitur> on/off
 ╰──────────────────
 
-_Powered by Kanata-V3_`,
+_Powered by Antidonasi -V3_`,
                     contextInfo: {
                         isForwarded: true,
                         forwardingScore: 9999999,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363305152329358@newsletter',
-                            newsletterName: 'Kanata Settings',
+                            newsletterName: 'Antidonasi Inc. Settings',
                             serverMessageId: -1
                         },
                         externalAdReply: {

@@ -23,7 +23,7 @@ class Kanata {
 
     async start() {
         logger.showBanner();
-        const loadingProgress = logger.progress.start('Initializing Kanata Bot...');
+        const loadingProgress = logger.progress.start('Initializing Antidonasi Inc....');
 
         try {
             const msgRetryCounterCache = new NodeCache();
@@ -128,7 +128,7 @@ class Kanata {
             return sock;
         } catch (error) {
             logger.progress.stop(loadingProgress);
-            logger.error("Failed to start Kanata Bot", error);
+            logger.error("Failed to start Antidonasi Inc.", error);
             throw error;
         }
     }

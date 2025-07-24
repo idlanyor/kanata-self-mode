@@ -8,7 +8,14 @@ export const description = `🎵 Audio effects:
 *.ae slow* = slow motion
 *.ae fast* = fast motion
 *.ae reverb* = reverb effect
-*.ae echo* = echo effect`;
+*.ae echo* = echo effect
+*.ae 8d* = 8D Audio
+*.ae vaporwave* = vaporwave
+*.ae earrape* = earrape
+*.ae chipmunk* = chipmunk
+*.ae vibrato* = vibrato
+*.ae blown* = blown bass
+*.ae deep* = deep voice`;
 
 export default async ({ sock, m, id, psn, sender, noTel, attf }) => {
     if (!Buffer.isBuffer(attf)) {
@@ -66,6 +73,41 @@ export default async ({ sock, m, id, psn, sender, noTel, attf }) => {
             case 'echo':
                 ffmpegCommand = `ffmpeg -i "INPUT_FILE" -af "aecho=0.8:0.88:60:0.4" -b:a 192k "OUTPUT_FILE"`;
                 effectName = "Echo";
+                break;
+            
+            case '8d':
+                ffmpegCommand = `ffmpeg -i "INPUT_FILE" -af "apulsator=hz=0.125,stereotools=phaseinv=1:mode=lr>rr" -b:a 192k "OUTPUT_FILE"`;
+                effectName = "8D Audio";
+                break;
+
+            case 'vaporwave':
+                ffmpegCommand = `ffmpeg -i "INPUT_FILE" -af "asetrate=44100*0.8,aresample=44100,atempo=0.8" -b:a 192k "OUTPUT_FILE"`;
+                effectName = "Vaporwave";
+                break;
+
+            case 'earrape':
+                ffmpegCommand = `ffmpeg -i "INPUT_FILE" -af "acrusher=level_in=8:level_out=18:bits=8:mode=log:aa=1" -b:a 192k "OUTPUT_FILE"`;
+                effectName = "Earrape";
+                break;
+
+            case 'chipmunk':
+                ffmpegCommand = `ffmpeg -i "INPUT_FILE" -af "asetrate=44100*1.4,aresample=44100,atempo=0.8" -b:a 192k "OUTPUT_FILE"`;
+                effectName = "Chipmunk";
+                break;
+
+            case 'vibrato':
+                ffmpegCommand = `ffmpeg -i "INPUT_FILE" -af "vibrato=f=6.5:d=0.5" -b:a 192k "OUTPUT_FILE"`;
+                effectName = "Vibrato";
+                break;
+
+            case 'blown':
+                ffmpegCommand = `ffmpeg -i "INPUT_FILE" -af "bass=g=25:frequency=40:width_type=h,dynaudnorm" -b:a 192k "OUTPUT_FILE"`;
+                effectName = "Blown Bass";
+                break;
+
+            case 'deep':
+                ffmpegCommand = `ffmpeg -i "INPUT_FILE" -af "asetrate=44100*0.8,aresample=44100,atempo=1.1" -b:a 192k "OUTPUT_FILE"`;
+                effectName = "Deep Voice";
                 break;
 
             default:

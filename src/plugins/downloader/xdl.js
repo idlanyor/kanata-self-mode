@@ -1,4 +1,5 @@
-import axios from "axios";
+import { withPluginHandling } from "../../helper/pluginUtils.js";
+import { hikaru } from "../../helper/hikaru.js";
 
 export const description = "🐦 Simple Twitter/X Video Downloader by *FastURL*";
 export const handler = "xd";
@@ -11,13 +12,10 @@ export default async ({ sock, m, id, psn }) => {
         return;
     }
 
-    try {
-        await sock.sendMessage(id, { react: { text: '⏳', key: m.key } });
-
-        const res = await axios.get(globalThis.hikaru.baseUrl + `downup/twdown/simple?url=${encodeURIComponent(psn)}`, {
+    await withPluginHandling(sock, m.key, id, async () => {
+        const res = await hikaru(`downup/twdown/simple?url=${encodeURIComponent(psn)}`, {
             headers: { 
-                accept: 'application/json',
-                'x-api-key': globalThis.hikaru.apiKey
+                accept: 'application/json'
             }
         });
 
@@ -42,16 +40,7 @@ export default async ({ sock, m, id, psn }) => {
         const videoUrl = result.videohd || result.videosd;
         await sock.sendMessage(id, {
             video: { url: videoUrl },
-            caption: `🎞️ *Video berhasil diunduh!*\n📝 ${result.desc || 'Tanpa deskripsi'}\n\n👨‍💻 Kanata V3`
+            caption: `🎞️ *Video berhasil diunduh!*\n📝 ${result.desc || 'Tanpa deskripsi'}\n\n👨‍💻 Antidonasi Inc.`
         });
-
-        await sock.sendMessage(id, { react: { text: '✅', key: m.key } });
-
-    } catch (error) {
-        console.error('❌ Error:', error);
-        await sock.sendMessage(id, {
-            text: '❌ *Terjadi error:* \n' + error.message
-        });
-        await sock.sendMessage(id, { react: { text: '❌', key: m.key } });
-    }
+    });
 };

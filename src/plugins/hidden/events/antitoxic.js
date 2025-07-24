@@ -53,7 +53,7 @@ export default async ({ sock, m, id, psn, sender }) => {
                     forwardingScore: 999,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363305152329358@newsletter',
-                        newsletterName: 'Kanata Anti-Toxic',
+                        newsletterName: 'Antidonasi Inc. Anti-Toxic',
                         serverMessageId: -1
                     },
                     externalAdReply: {

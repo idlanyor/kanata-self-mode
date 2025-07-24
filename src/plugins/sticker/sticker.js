@@ -1,33 +1,25 @@
 import { createSticker, StickerTypes } from "wa-sticker-formatter";
+import { withPluginHandling } from "../../helper/pluginUtils.js";
 
 export const description = "Sticker maker";
 export const handler = "s"
 export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
 
-  if (Buffer.isBuffer(attf)) {
+  if (!Buffer.isBuffer(attf)) {
+    if (!m.message?.conversation && !m.message?.extendedTextMessage?.contextInfo?.quotedMessage?.imageMessage) {
+        return await sock.sendMessage(id, { text: 'Kirim/reply gambar dengan caption s' });
+    }
+  }
+
+  await withPluginHandling(sock, m.key, id, async () => {
     const stickerOption = {
-      pack: "Kanata",
-      author: "KanataBot",
+      pack: "Antidonasi Inc.",
+      author: "Antidonasi Inc.Bot",
       type: StickerTypes.ROUNDED,
       quality: 100
     }
 
-    try {
-      const generateSticker = await createSticker(attf, stickerOption);
-      await sock.sendMessage(id, { sticker: generateSticker }, { quoted:m });
-    } catch (error) {
-      console.log('Error creating sticker:', error);
-      await sock.sendMessage(id, { text: `Error creating sticker\n Reason :\n ${error}` });
-    }
-
-    return
-  }
-  // else {
-  //   console.log('Media data not found');
-  if (!m.message?.conversation && !m.message?.extendedTextMessage?.contextInfo?.quotedMessage?.imageMessage) {
-    return
-  };
-  //   await sock.sendMessage(id, { text: 'Kirim/reply gambar dengan caption s' });
-  // }
-  await sock.sendMessage(id, { text: 'Kirim/reply gambar dengan caption s' });
+    const generateSticker = await createSticker(attf, stickerOption);
+    await sock.sendMessage(id, { sticker: generateSticker }, { quoted:m });
+  });
 };

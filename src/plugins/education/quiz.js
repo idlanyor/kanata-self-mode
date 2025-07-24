@@ -34,7 +34,7 @@ Ketik angka 1-4 sesuai pilihan jawaban
 *Contoh:*
 .quiz start science
 
-_Powered by Kanata-V3_`;
+_Powered by Antidonasi -V3_`;
 
 async function fetchQuestion(category) {
     const response = await fetch(`https://opentdb.com/api.php?amount=1&category=${categories[category]}&type=multiple`);
@@ -102,7 +102,7 @@ ${quizData.answers.map((answer, i) => `├ ${i + 1}. ${answer}`).join('\n')}
 ├ Ketik angka 1-4 untuk menjawab
 ╰──────────────────
 
-_Powered by Kanata-V3_`;
+_Powered by Antidonasi -V3_`;
 
             await sock.sendMessage(id, {
                 text: message,
@@ -134,7 +134,7 @@ _Powered by Kanata-V3_`;
 ├ *Jawaban Benar:* ${correctAnswer}
 ╰──────────────────
 
-_Powered by Kanata-V3_`;
+_Powered by Antidonasi -V3_`;
 
             await sock.sendMessage(id, {
                 text: message,

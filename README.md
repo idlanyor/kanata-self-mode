@@ -1,11 +1,11 @@
 <div align="center">
   
-# 🌟 Kanata V3 - WhatsApp Bot
+# 🌟 Antidonasi Inc. - WhatsApp Bot
 ### _Powerful, Modular, Intelligent_
 
-[![GitHub repo size](https://img.shields.io/github/repo-size/idlanyor/kanata-self-mode?style=for-the-badge)](https://github.com/idlanyor/kanata-self-mode)
-[![GitHub stars](https://img.shields.io/github/stars/idlanyor/kanata-self-mode?style=for-the-badge)](https://github.com/idlanyor/kanata-self-mode)
-[![GitHub license](https://img.shields.io/github/license/idlanyor/kanata-self-mode?style=for-the-badge)](https://github.com/idlanyor/kanata-self-mode)
+[![GitHub repo size](https://img.shields.io/github/repo-size/idlanyor/Antidonasi Inc.-self-mode?style=for-the-badge)](https://github.com/idlanyor/Antidonasi Inc.-self-mode)
+[![GitHub stars](https://img.shields.io/github/stars/idlanyor/Antidonasi Inc.-self-mode?style=for-the-badge)](https://github.com/idlanyor/Antidonasi Inc.-self-mode)
+[![GitHub license](https://img.shields.io/github/license/idlanyor/Antidonasi Inc.-self-mode?style=for-the-badge)](https://github.com/idlanyor/Antidonasi Inc.-self-mode)
 [![Node.js Version](https://img.shields.io/badge/Node.js-18+-43853D?style=for-the-badge&logo=node.js)](https://nodejs.org/)
 [![Baileys](https://img.shields.io/badge/Baileys-Latest-blue?style=for-the-badge)](https://github.com/whiskeysockets/baileys)
 
@@ -39,8 +39,8 @@
 ## 👌 How to install
 1. **Clone the repository**
 ```bash
-git clone https://github.com/idlanyor/kanata-self-mode.git
-cd kanata-self-mode
+git clone https://github.com/idlanyor/Antidonasi Inc.-self-mode.git
+cd Antidonasi Inc.-self-mode
 ```
 
 2. **Install dependencies**
@@ -70,8 +70,8 @@ Copy `globalThis.example.js` to `globalThis.js` and configure your settings:
 globalThis.owner = "YOUR_NAME";
 globalThis.ownerNumber = ["YOUR_NUMBER","SECOND_NUMBER"]
 globalThis.botNumber = ""
-globalThis.botName = "Kanata"
-globalThis.sessionName = 'kanata-bot'
+globalThis.botName = "Antidonasi Inc."
+globalThis.sessionName = 'Antidonasi Inc.-bot'
 globalThis.groupJid = '0@g.us'
 globalThis.communityId = '0@g.us'
 globalThis.newsLetterJid = '0@newsletter'
@@ -167,7 +167,7 @@ globalThis.apiHelper = {
 
 ## 🔌 API Integration
 
-Kanata integrates with multiple powerful APIs to provide enhanced functionality:
+Antidonasi Inc. integrates with multiple powerful APIs to provide enhanced functionality:
 
 ### AI Services
 - 🧠 Google Generative AI - Advanced language processing

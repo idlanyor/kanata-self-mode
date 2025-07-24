@@ -31,7 +31,7 @@ const helpText = `⚡ *ISLAMIC Q&A ASSISTANT* ⚡
 • Mengutamakan pendapat mayoritas ulama
 • Bahasa yang mudah dipahami
 
-_Powered by Kanata-V3_`;
+_Powered by Antidonasi -V3_`;
 
 // Template prompts untuk Gemini
 const prompts = {
@@ -168,7 +168,7 @@ export default async ({ sock, m, id, psn, sender }) => {
 ${response.split('\n').map(line => '├ ' + line).join('\n')}
 ╰──────────────────
 
-_Powered by Kanata-V3_`;
+_Powered by Antidonasi -V3_`;
 
         await sock.sendMessage(id, {
             text: message,

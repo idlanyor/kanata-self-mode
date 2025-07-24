@@ -38,11 +38,11 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
             forwardedNewsletterMessageInfo: {
                 newsletterJid: globalThis.newsLetterJid,
                 serverMessageId: -1,
-                newsletterName: 'Kanata-V3'
+                newsletterName: 'Antidonasi Inc.-V3'
             },
             externalAdReply: {
                 showAdAttribution: true,
-                title: '乂 Kanata-V3 乂',
+                title: '乂 Antidonasi Inc.-V3 乂',
                 body: m.pushName || sender,
                 mediaType: 1,
                 thumbnailUrl: 'https://files.catbox.moe/2wynab.jpg',

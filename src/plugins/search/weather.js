@@ -1,15 +1,17 @@
+import { withPluginHandling } from "../../helper/pluginUtils.js";
+
 export const handler = 'cuaca';
 export const description = 'Cek cuaca terkini dari nama kota';
 
 export default async ({ sock, m, id, psn }) => {
-    try {
-        if (!psn) {
-            await sock.sendMessage(id, {
-                text: `⚠️ *Format salah!*\n\nContoh: *.cuaca purbalingga*`
-            });
-            return;
-        }
+    if (!psn) {
+        await sock.sendMessage(id, {
+            text: `⚠️ *Format salah!\n\nContoh: *.cuaca purbalingga*`
+        });
+        return;
+    }
 
+    await withPluginHandling(sock, m.key, id, async () => {
         const API_KEY = '48d0d41a45c0d9f4f20dc5547e2e74dc'; // Hati-hati bocor bang 😬
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(psn)}&appid=${API_KEY}&units=metric&lang=id`;
 
@@ -17,10 +19,7 @@ export default async ({ sock, m, id, psn }) => {
         const data = await res.json();
 
         if (data.cod !== 200) {
-            await sock.sendMessage(id, {
-                text: `❌ Gagal ambil data cuaca untuk kota *${psn}*\nCek lagi nama kotanya ya bos.`
-            });
-            return;
+            throw new Error(`Gagal ambil data cuaca untuk kota *${psn}*\nCek lagi nama kotanya ya bos.`);
         }
 
         const weather = data.weather[0];
@@ -48,11 +47,6 @@ Powered by OpenWeatherMap
             image: { url: iconUrl },
             caption: text
         });
-
-    } catch (err) {
-        await sock.sendMessage(id, {
-            text: `❌ Gagal ambil data cuaca karena: ${err.message || err}`
-        });
-    }
+    });
 };
 

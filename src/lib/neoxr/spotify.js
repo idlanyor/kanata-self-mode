@@ -1,11 +1,10 @@
-import axios from "axios";
+import { hikaru } from "../../helper/hikaru.js";
 
 export const spotifySearch = async (name) => {
     try {
-        const { data } = await axios.get(globalThis.hikaru.baseUrl + 'music/spotify', {
+        const { data } = await hikaru('music/spotify', {
             headers: {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-                'x-api-key': globalThis.hikaru.apiKey
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
             },
             params: {
                 name
@@ -20,14 +19,11 @@ export const spotifySearch = async (name) => {
 export const spotifySong = async (q) => {
     try {
         const result = await spotifySearch(q)
-        const { data } = await axios.get(globalThis.hikaru.baseUrl + 'downup/spotifydown', {
+        const { data } = await hikaru('downup/spotifydown', {
             params: {
                 url: result[0].url,
                 player: true,
                 server: 'server2'
-            },
-            headers: {
-                'x-api-key': globalThis.hikaru.apiKey
             }
         })
         return {
@@ -44,13 +40,10 @@ export const spotifySong = async (q) => {
 
 export const spotifyUrl = async (url) => {
     try {
-        const { data } = await axios.get(globalThis.hikaru.baseUrl + 'downup/spotifydown', {
+        const { data } = await hikaru('downup/spotifydown', {
             params: {
                 url: url,
                 player: true
-            },
-            headers: {
-                'x-api-key': globalThis.hikaru.apiKey
             }
         })
         return {

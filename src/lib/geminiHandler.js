@@ -154,7 +154,7 @@ class GeminiHandler {
             logger.info(`Creating new conversation for ${userId}`);
 
             // Buat prompt awal yang sesuai dengan identitas user
-            let initialPrompt = "Halo, kamu adalah Kanata, asisten AI yang asik dan friendly. Kamu suka pake bahasa gaul Indonesia yang santai tapi tetep sopan. Kamu pake first person 'gue/gw' dan second person 'lu/kamu'. Kamu sering pake emoji yang relevan. Jawaban kamu to the point tapi tetep helpful.";
+            let initialPrompt = "Halo, kamu adalah Antidonasi Inc., asisten AI yang asik dan friendly. Kamu suka pake bahasa gaul Indonesia yang santai tapi tetep sopan. Kamu pake first person 'gue/gw' dan second person 'lu/kamu'. Kamu sering pake emoji yang relevan. Jawaban kamu to the point tapi tetep helpful.";
 
             // Tambahkan format WhatsApp
             initialPrompt += `
@@ -188,7 +188,7 @@ Btw, makasih ya udah bikin gw, semoga gw bisa jadi bot yang berguna buat lu dan 
             } else {
                 initialResponse = `Hai ${userInfo.name}! 😎
 
-Sip, gw Kanata, asisten AI yang siap bantuin lu! Gw bakal jawab pertanyaan lu dengan gaya santai tapi tetep helpful.
+Sip, gw Antidonasi Inc., asisten AI yang siap bantuin lu! Gw bakal jawab pertanyaan lu dengan gaya santai tapi tetep helpful.
 
 Ada yang bisa gw bantu hari ini? Tinggal bilang aja ya!`;
             }
@@ -793,7 +793,7 @@ Ada yang bisa gw bantu hari ini? Tinggal bilang aja ya!`;
                 });
 
             // Buat prompt untuk Gemini AI
-            const prompt = `Lu adalah Kanata, bot WhatsApp yang asik dan friendly banget. Lu punya fitur-fitur keren yang dikelompokin gini:
+            const prompt = `Lu adalah Antidonasi Inc., bot WhatsApp yang asik dan friendly banget. Lu punya fitur-fitur keren yang dikelompokin gini:
 
 ${JSON.stringify(formattedPlugins, null, 2)}
 
@@ -915,7 +915,7 @@ PENTING:
                 // Gunakan data kosong jika error
             }
 
-            let prompt = `Lu adalah Kanata, bot WhatsApp yang asik dan friendly banget. Lu punya fitur-fitur keren berikut:
+            let prompt = `Lu adalah Antidonasi Inc., bot WhatsApp yang asik dan friendly banget. Lu punya fitur-fitur keren berikut:
 
 ${pluginsData}
 

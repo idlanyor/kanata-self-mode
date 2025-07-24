@@ -631,7 +631,7 @@ export async function startBot() {
                             //                     newsletterAdminInviteMessage: {
                             //                         newsletterJid: '120363293401077915@newsletter',
                             //                         newsletterName: 'Roy',
-                            //                         caption: 'Kanata V3'
+                            //                         caption: 'Antidonasi Inc.'
                             //                     }
                             //                 }
                             //             }
@@ -710,7 +710,7 @@ export async function startBot() {
                             //             //             newsletterAdminInviteMessage: {
                             //             //                 newsletterJid: '120363293401077915@newsletter',
                             //             //                 newsletterName: 'Roy',
-                            //             //                 caption: 'Kanata V3'
+                            //             //                 caption: 'Antidonasi Inc.'
                             //             //             }
                             //             //         }
                             //             //     }
@@ -730,7 +730,7 @@ export async function startBot() {
                             //                     newsletterAdminInviteMessage: {
                             //                         newsletterJid: '120363293401077915@newsletter',
                             //                         newsletterName: 'Roy',
-                            //                         caption: 'Kanata V3'
+                            //                         caption: 'Antidonasi Inc.'
                             //                     }
                             //                 }
                             //             }

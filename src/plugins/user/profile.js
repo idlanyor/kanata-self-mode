@@ -64,7 +64,7 @@ export default async ({ sock, m, id, psn, sender, noTel }) => {
 ╰──────────────────
 
 💡 _Ketik .setbio untuk mengatur biodata_
-_Powered by Kanata-V3_`,
+_Powered by Antidonasi -V3_`,
                 contextInfo: {
                     mentionedJid: [user.phone + "@s.whatsapp.net"],
                     isForwarded: true,

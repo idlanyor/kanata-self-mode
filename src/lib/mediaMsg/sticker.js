@@ -10,8 +10,8 @@ export default async function sticker(sock, m, chatUpdate) {
         }
 
         const stickerOption = {
-            pack: "Kanata",
-            author: "KanataBot",
+            pack: "Antidonasi Inc.",
+            author: "Antidonasi Inc.Bot",
             type: StickerTypes.FULL,
             quality: 100,
         }

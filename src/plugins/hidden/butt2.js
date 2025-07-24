@@ -3,7 +3,7 @@ export const description = 'y'
 export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
   await sock.sendMessage(m.chat, {
     text: "Hello World !;",
-    footer: "© Kanata",
+    footer: "© Antidonasi Inc.",
     buttons: [
       {
         buttonId: '.tes',
@@ -31,7 +31,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
             title: 'message',
             sections: [
               {
-                title: 'Kanata - V3',
+                title: 'Antidonasi Inc. - V3',
                 highlight_label: '😜',
                 rows: [
                   {

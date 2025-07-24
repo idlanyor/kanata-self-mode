@@ -29,7 +29,7 @@ export default async ({ sock, id, m, cmd }) => {
 
     await sock.sendMessage(id, {
         text,
-        footer: '© 2024 Kanata Bot • Created by Roy',
+        footer: '© 2024 Antidonasi Inc. • Created by Roy',
         buttons: [
             {
                 buttonId: 'menu',

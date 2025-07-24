@@ -1,14 +1,16 @@
+import { withPluginHandling } from "../../helper/pluginUtils.js";
+
 export const handler = 'country';
 export const description = 'Cek informasi negara berdasarkan nama';
 
 export default async ({ sock, m, id, psn }) => {
-    try {
-        if (!psn) {
-            return await sock.sendMessage(id, {
-                text: `📌 *Contoh:* .negara indonesia`
-            });
-        }
+    if (!psn) {
+        return await sock.sendMessage(id, {
+            text: `📌 *Contoh:* .negara indonesia`
+        });
+    }
 
+    await withPluginHandling(sock, m.key, id, async () => {
         const url = `https://restcountries.com/v3.1/name/${encodeURIComponent(psn)}`;
         const res = await fetch(url);
         const data = await res.json();
@@ -47,10 +49,5 @@ export default async ({ sock, m, id, psn }) => {
             image: { url: flag },
             caption: teks
         });
-
-    } catch (err) {
-        await sock.sendMessage(id, {
-            text: `❌ Gagal ambil data negara: ${err.message || err}`
-        });
-    }
+    });
 };

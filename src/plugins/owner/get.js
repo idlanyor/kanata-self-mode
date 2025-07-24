@@ -1,7 +1,5 @@
-import { checkOwner } from '../../helper/permission.js';
 
 export default async ({ sock, m, id, noTel, psn }) => {
-    // if (!await checkOwner(sock, id, noTel)) return;
 
     if (!psn) {
         await sock.sendMessage(id, { text: '❌ Masukkan URL yang akan di-GET!\n*Contoh:* !get https://api.example.com/data' });
@@ -37,11 +35,10 @@ export default async ({ sock, m, id, noTel, psn }) => {
 
         const contentType = response.headers.get('content-type');
         const fileName = url.split('/').pop() || 'file';
-        let data = await response.text(); // Ambil response sebagai teks
 
         if (contentType.includes('application/json')) {
-            // Tangani JSON response terlebih dahulu
-            const json = await response.json(); // Mengambil JSON dari response
+            const data = await response.text();
+            const json = JSON.parse(data);
             let jsonString = JSON.stringify(json, null, 2);
             await sock.sendMessage(id, {
                 text: `🛜 *GET Request*\n\n📃 *Response:*\n${jsonString}`,
@@ -85,6 +82,7 @@ export default async ({ sock, m, id, noTel, psn }) => {
                 }
             });
         } else if (contentType.includes('audio')) {
+            const audioUrl = response.url;
             await sock.sendMessage(id, {
                 audio: { url: audioUrl }, // Menggunakan URL audio
                 mimetype: 'audio/mpeg',
@@ -115,8 +113,9 @@ export default async ({ sock, m, id, noTel, psn }) => {
                 }
             });
         } else {
+            const data = await response.text();
             // Jika bukan file media atau json, kirim sebagai teks
-            await sock.sendMessage(id, { text: `🛜 *GET Request*\n\n📃 *Response:*\n${JSON.stringify(data, null, 2)}` });
+            await sock.sendMessage(id, { text: `🛜 *GET Request*\n\n📃 *Response:*\n${data}` });
         }
 
         // Kirim reaction sukses

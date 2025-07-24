@@ -1,12 +1,12 @@
-import {  proto, prepareWAMessageMedia, generateWAMessageFromContent } from '@fizzxydev/baileys-pro';
-
+import { proto, prepareWAMessageMedia, generateWAMessageFromContent } from '@fizzxydev/baileys-pro';
 import { spotifySearch } from '../../lib/neoxr/spotify.js';
-import { createCanvas,registerFont } from 'canvas';
+import { createCanvas, registerFont } from 'canvas';
 import fs from 'fs';
 import path from 'path';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { handleEmptyPrompt, withPluginHandling } from "../../helper/pluginUtils.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,7 +16,7 @@ registerFont(join(__dirname, '../../assets/fonts/Poppins-Bold.ttf'), { family: '
 registerFont(join(__dirname, '../../assets/fonts/Poppins-Medium.ttf'), { family: 'Poppins Medium' });
 registerFont(join(__dirname, '../../assets/fonts/Poppins-Regular.ttf'), { family: 'Poppins' });
 
-export const handler = "spotifysearch"
+export const handler = "spotifysearch";
 export const description = "Cari Musik dari *Spotify*";
 
 // Lokasi penyimpanan gambar sementara
@@ -143,30 +143,30 @@ const createSpotifySearchImage = async (query, results = []) => {
 const spotifySearchResult = async (query) => {
     const hasilPencarian = await spotifySearch(query);
     let sections = [{
-        title: "Kanata V3",
+        title: "Antidonasi Inc.",
         highlight_label: 'Start Chats',
         rows: [{
-            header: "Kanata V3",
+            header: "Antidonasi Inc.",
             title: "Menu",
             description: `Kembali ke menu!`,
             id: '.menu'
         },
         {
-            header: "Kanata V3",
+            header: "Antidonasi Inc.",
             title: "Owner Bot",
-            description: "Owner bot Kanata V3",
+            description: "Owner bot Antidonasi Inc.",
             id: '.owner'
         }]
     }];
 
     hasilPencarian.forEach((hasil) => {
         sections.push({
-            title: `${hasil.title} - ${hasil.artist || 'Various Artist'}`,
+            title: `${hasil.title} - ${hasil.artist || 'Various Artist'} `,
             highlight_label: hasil.duration,
             rows: [
                 {
                     title: `Download ${hasil.title}`,
-                    description: `${hasil.artist || 'Various Artist'}`,
+                    description: `${hasil.artist || 'Various Artist'} `,
                     id: `spotify ${hasil.url}`
                 }
             ]
@@ -178,23 +178,22 @@ const spotifySearchResult = async (query) => {
         sections
     };
     return listMessage;
-}
+};
 
 export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
     if (psn == "") {
-        return sock.sendMessage(id, { text: "🔎 Mau cari apa?\nKetik *ss <query>*\nContoh: *ss himawari*" });
+        await handleEmptyPrompt(sock, id, "spotifysearch", "himawari");
+        return;
     }
 
-    sock.sendMessage(id, { react: { text: '⏱️', key: m.key } });
-
-    try {
+    await withPluginHandling(sock, m.key, id, async () => {
         // Cari hasil dari Spotify
         const hasilPencarian = await spotifySearch(psn);
 
         // Buat gambar dengan canvas
         const imagePath = await createSpotifySearchImage(psn, hasilPencarian);
 
-        let roy = `*Powered By Kanata V3*\nMenampilkan hasil pencarian untuk: "${psn}", klik list untuk info selengkapnya. 🍿`;
+        let roy = `*Powered by Antidonasi *\nMenampilkan hasil pencarian untuk: "${psn}", klik list untuk info selengkapnya. 🍿`;
 
         // Persiapkan media dengan kualitas tinggi
         const mediaOptions = {
@@ -206,41 +205,42 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
 
         const preparedMedia = await prepareWAMessageMedia(mediaOptions, { upload: sock.waUploadToServer });
 
-        let msg = generateWAMessageFromContent(m.chat, {
-            viewOnceMessage: {
-                message: {
-                    "messageContextInfo": {
-                        "deviceListMetadata": {},
-                        "deviceListMetadataVersion": 2
-                    },
-                    interactiveMessage: proto.Message.InteractiveMessage.create({
-                        body: proto.Message.InteractiveMessage.Body.create({
-                            text: roy
-                        }),
-                        footer: proto.Message.InteractiveMessage.Footer.create({
-                            text: '©️ Kanata V3'
-                        }),
-                        header: proto.Message.InteractiveMessage.Header.create({
-                            subtitle: sender,
-                            hasMediaAttachment: true,
-                            ...preparedMedia
-                        }),
-                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                            buttons: [
-                                {
-                                    "name": "single_select",
-                                    "buttonParamsJson": JSON.stringify(await spotifySearchResult(psn, sender))
-                                },
-                                {
-                                    "name": "quick_reply",
-                                    "buttonParamsJson": "{\"display_text\":\"Owner Bot\",\"id\":\"owner\"}"
-                                }
-                            ],
+        let msg = generateWAMessageFromContent(m.chat,
+            {
+                viewOnceMessage: {
+                    message: {
+                        "messageContextInfo": {
+                            "deviceListMetadata": {},
+                            "deviceListMetadataVersion": 2
+                        },
+                        interactiveMessage: proto.Message.InteractiveMessage.create({
+                            body: proto.Message.InteractiveMessage.Body.create({
+                                text: roy
+                            }),
+                            footer: proto.Message.InteractiveMessage.Footer.create({
+                                text: '©️ Antidonasi Inc.'
+                            }),
+                            header: proto.Message.InteractiveMessage.Header.create({
+                                subtitle: sender,
+                                hasMediaAttachment: true,
+                                ...preparedMedia
+                            }),
+                            nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                                buttons: [
+                                    {
+                                        "name": "single_select",
+                                        "buttonParamsJson": JSON.stringify(await spotifySearchResult(psn, sender))
+                                    },
+                                    {
+                                        "name": "quick_reply",
+                                        "buttonParamsJson": "{\"display_text\":\"Owner Bot\",\"id\":\"owner\"}"
+                                    }
+                                ]
+                            })
                         })
-                    })
+                    }
                 }
-            }
-        }, { quoted: m });
+            }, { quoted: m });
 
         await sock.relayMessage(id, msg.message, {
             messageId: msg.key.id
@@ -250,11 +250,5 @@ export default async ({ sock, m, id, psn, sender, noTel, caption }) => {
         if (fs.existsSync(tempImagePath)) {
             fs.unlinkSync(tempImagePath);
         }
-
-        await sock.sendMessage(id, { react: { text: '✅', key: m.key } });
-    } catch (error) {
-        console.error('Error in spotifySearch:', error);
-        await sock.sendMessage(id, { text: "❌ Terjadi kesalahan saat mencari musik. Silakan coba lagi nanti." });
-        await sock.sendMessage(id, { react: { text: '❌', key: m.key } });
-    }
-} 
+    });
+}  

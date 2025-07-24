@@ -93,7 +93,7 @@ function draw() {
     
     // Disclaimer
     ctx.font = '24px Arial';
-    ctx.fillText('Powered by Kanata', canvas.width/2, 1450);
+    ctx.fillText('Powered by Antidonasi ', canvas.width/2, 1450);
   }
 }
 

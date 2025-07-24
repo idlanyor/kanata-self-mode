@@ -60,7 +60,7 @@ export default async ({ sock, id, m, noTel, sender }) => {
                         text: "📥 *Pilih downloader sing pengen karo pencet tombol ing ngisor iki* 📥"
                     }),
                     footer: proto.Message.InteractiveMessage.Footer.create({
-                        text: `©Kanata V3 || Roy`
+                        text: `©Antidonasi Inc. || Roy`
                     }),
                     header: proto.Message.InteractiveMessage.Header.create({
                         title: `🛠 *Downloader Tools* 🛠`
@@ -84,7 +84,7 @@ export default async ({ sock, id, m, noTel, sender }) => {
             message: {
                 newsletterAdminInviteMessage: {
                     newsletterJid: '120363302865191524@newsletter',
-                    newsletterName: 'Kanata Bot',
+                    newsletterName: 'Antidonasi Inc.',
                     caption: sender
                 }
             }

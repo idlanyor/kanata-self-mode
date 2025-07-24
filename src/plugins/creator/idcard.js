@@ -33,7 +33,7 @@ async function createIDCard(name, role, id, avatarUrl) {
     ctx.fillStyle = '#ffffff';
     ctx.font = '60px Poppins Bold';
     ctx.textAlign = 'center';
-    ctx.fillText('KANATA BOT', canvas.width/2, 150);
+    ctx.fillText('Antidonasi Inc.', canvas.width/2, 150);
     
     ctx.font = '36px Poppins';
     ctx.fillText('OFFICIAL ID CARD', canvas.width/2, 210);
@@ -120,7 +120,7 @@ async function createIDCard(name, role, id, avatarUrl) {
     
     // Disclaimer
     ctx.font = '24px Poppins';
-    ctx.fillText('Powered by Kanata Bot', canvas.width/2, 1450);
+    ctx.fillText('Powered by Antidonasi ', canvas.width/2, 1450);
     
     return canvas.toBuffer('image/png');
 }

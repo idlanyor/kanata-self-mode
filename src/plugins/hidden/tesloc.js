@@ -8,7 +8,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
             degreesLongitude: 109.33847051113844, // Ganti dengan longitude lokasi
         },
         caption: "Ini adalah lokasi yang dikirim.",
-        footer: "© Kanata",
+        footer: "© Antidonasi Inc.",
         buttons: [
             {
                 buttonId: `🚀`,

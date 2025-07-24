@@ -36,7 +36,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
                                 `🔗 *Link:* ${linkGambar}\n\n` +
                                 `📝 *Note:* Klik tombol Copy Link untuk menyalin URL\n` +
                                 `atau gunakan tombol Visit Link untuk membuka gambar.\n\n` +
-                                `_Powered by Kanata Bot_`,
+                                `_Powered by Antidonasi _`,
                             mimetype: "image/jpeg",
                             jpegThumbnail: attf,
                         }
@@ -47,7 +47,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
             await sendIAMessage(id, btns, m, {
                 header: '乂 Image Uploader 乂',
                 content: messageContent.viewOnceMessage.message.imageMessage.caption,
-                footer: '© 2024 Kanata Bot • Created with ❤️ by Roy',
+                footer: '© 2024 Antidonasi Inc. • Created with ❤️ by Roy',
                 media: linkGambar,
                 mediaType: "image"
             }, sock);
@@ -94,7 +94,7 @@ export default async ({ sock, m, id, psn, sender, noTel, caption, attf }) => {
             `📝 *Cara penggunaan:*\n` +
             `• Kirim gambar dengan caption *!upload*\n` +
             `• Reply gambar dengan *!upload*\n\n` +
-            `_Powered by Kanata Bot_`,
+            `_Powered by Antidonasi _`,
         contextInfo: {
             externalAdReply: {
                 title: 'Image Uploader',
